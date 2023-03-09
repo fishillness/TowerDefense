@@ -5,6 +5,8 @@ namespace SpaceShooter
     public class EntitySpawner : MonoBehaviour
     {
         #region Properties
+        [SerializeField] private AIPointPatrol moveTarget;
+
         /// <summary>
         /// Spawner operation mode: at startup or periodically.
         /// Режим работы спавнера: при старте или переодически.
@@ -71,6 +73,11 @@ namespace SpaceShooter
 
                 GameObject e = Instantiate(m_EntityPrefabs[index].gameObject);
                 e.transform.position = m_Area.GetRandomInsideZone();
+
+                if (e.TryGetComponent<AIController>(out var ai))
+                {
+                    ai.SetPatrolBehaviour(moveTarget);
+                }
             }
         }
 
