@@ -36,7 +36,7 @@ namespace SpaceShooter
         #region Unity Events
         private void Start()
         {
-            Player.Instance.ActiveShip.EventOnDeath.AddListener(OnShipDeath);
+            //Player.Instance.ActiveShip.EventOnDeath.AddListener(OnShipDeath);
         }
         private void Update()
         {
@@ -47,19 +47,24 @@ namespace SpaceShooter
             if (hit)
             {
                 Destructible dest = hit.collider.transform.root.GetComponent<Destructible>();
+
                 if (dest != null && dest != m_Parent)
                 {
                     dest.ApplyDamage(m_Damage);
 
-                    if (m_Parent == Player.Instance.ActiveShip)
+                    if (Player.Instance != null && dest.HitPoints < 0)
                     {
-                        Player.Instance.AddScore(dest.ScoreValue);
-                        if (dest.HitPoints <= 0 && dest.GetComponent<SpaceShip>() != null &&
-                            dest.TeamId != Player.Instance.ActiveShip.TeamId) //
+                        if (m_Parent == Player.Instance.ActiveShip)
                         {
-                            Player.Instance.AddKill();
+                            Player.Instance.AddScore(dest.ScoreValue);
+                            /*if (dest.HitPoints <= 0 && dest.GetComponent<SpaceShip>() != null &&
+                                dest.TeamId != Player.Instance.ActiveShip.TeamId) //
+                            {
+                                Player.Instance.AddKill();
+                            }*/
                         }
                     }
+                    
                 }
                 OnProjectileLifeEnd(hit.collider, hit.point);
             }
@@ -71,10 +76,10 @@ namespace SpaceShooter
             transform.position += new Vector3(step.x, step.y, 0);
         }
 
-        private void OnShipDeath()
+        /*private void OnShipDeath()
         {
             Destroy(gameObject);
-        }
+        }*/
 
         private void OnProjectileLifeEnd(Collider2D col, Vector2 pos)
         {

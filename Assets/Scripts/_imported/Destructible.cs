@@ -98,9 +98,9 @@ namespace SpaceShooter
         /// </summary>
         protected virtual void OnDeath()
         {
-            var explosion = Instantiate(m_ExplosionPrefab);
+            /*var explosion = Instantiate(m_ExplosionPrefab);
             explosion.transform.position = gameObject.transform.position;
-            Destroy(explosion, 0.5f);
+            Destroy(explosion, 0.5f);*/
 
             Destroy(gameObject);
             m_EventOnDeath?.Invoke();
