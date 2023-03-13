@@ -121,13 +121,7 @@ namespace SpaceShooter
                         
                         if(isInsidePatrolZone == true)
                         {
-                            if (m_RandomizeDirectionTimer.IsFinished)
-                            {
-                                Vector2 newPoint = UnityEngine.Random.onUnitSphere * m_PatrolPoint.Radius + m_PatrolPoint.transform.position;
-                                m_MovePosition = newPoint;
-
-                                m_RandomizeDirectionTimer.Start(m_RandomSelectMovePointTime);
-                            }
+                            GetNewPoint();
                         }
                         else
                         {
@@ -137,7 +131,16 @@ namespace SpaceShooter
                 }
             }
         }
+        protected virtual void GetNewPoint()
+        {
+            if (m_RandomizeDirectionTimer.IsFinished)
+            {
+                Vector2 newPoint = UnityEngine.Random.onUnitSphere * m_PatrolPoint.Radius + m_PatrolPoint.transform.position;
+                m_MovePosition = newPoint;
 
+                m_RandomizeDirectionTimer.Start(m_RandomSelectMovePointTime);
+            }
+        }
         private void ActionEvadeCollision()
         {
             if (Physics2D.Raycast(transform.position, transform.up, m_EvadeRayLenght) == true)

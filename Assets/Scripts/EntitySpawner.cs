@@ -1,11 +1,12 @@
 using UnityEngine;
+using TowerDefense;
 
 namespace SpaceShooter
 {
     public class EntitySpawner : MonoBehaviour
     {
         #region Properties
-        [SerializeField] private AIPointPatrol moveTarget;
+        [SerializeField] private Path m_path;
 
         /// <summary>
         /// Spawner operation mode: at startup or periodically.
@@ -74,9 +75,9 @@ namespace SpaceShooter
                 GameObject e = Instantiate(m_EntityPrefabs[index].gameObject);
                 e.transform.position = m_Area.GetRandomInsideZone();
 
-                if (e.TryGetComponent<AIController>(out var ai))
+                if (e.TryGetComponent<TDPatrolController>(out var ai))
                 {
-                    ai.SetPatrolBehaviour(moveTarget);
+                    ai.SetPath(m_path);
                 }
             }
         }

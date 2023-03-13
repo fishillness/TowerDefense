@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 5258247375523586517}
   - component: {fileID: 5794325428004989447}
   - component: {fileID: 2199969789916347228}
-  - component: {fileID: 627689673}
+  - component: {fileID: 7393106917166233966}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -180,12 +180,12 @@ MonoBehaviour:
   m_TeamId: 0
   m_ScoreValue: 0
   m_Mass: 1
-  m_Thrust: 10
+  m_Thrust: 1000
   m_Mobility: 1000
-  m_MaxLinearVelocity: 10
-  m_MaxAngularVelocity: 1000
+  m_MaxLinearVelocity: 1
+  m_MaxAngularVelocity: 360
   m_PreviewImage: {fileID: 0}
---- !u!114 &627689673
+--- !u!114 &7393106917166233966
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5258247375523586518}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c35ad00e2493154abe85d8e0a417c53, type: 3}
+  m_Script: {fileID: 11500000, guid: 83b1ed444683138429b9365f7cfa8e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_AIBehaviour: 1
