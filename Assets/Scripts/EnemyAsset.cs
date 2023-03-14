@@ -6,14 +6,26 @@ namespace TowerDefense
     public sealed class EnemyAsset : ScriptableObject
     {
         [Header("Внешний вид")]
-        public Color color = Color.white;
-        public Vector2 spriteScale = new Vector2(3, 3);
-        public RuntimeAnimatorController animations;
+        [SerializeField] private Color m_color = Color.white;
+        public Color Color => m_color;
+
+        [SerializeField] private Vector2 m_spriteScale = new Vector2(3, 3);
+        public Vector2 SpriteScale => m_spriteScale;
+
+        [SerializeField] private RuntimeAnimatorController m_animations;
+        public RuntimeAnimatorController Animations => m_animations;
 
         [Header("Игровые параметры")]
-        public float moveSpeed = 1;
-        public int hitpoint = 1;
-        public int score = 1;
-        public float radiusCollider = 0.17f;
+        [SerializeField] private float m_moveSpeed = 1;
+        public float MoveSpeed => m_moveSpeed;
+
+        [SerializeField] private int m_hitpoint = 1;
+        public int HitPoint => m_hitpoint;
+
+        [SerializeField] private int m_score = 1;
+        public int Score => m_score;
+
+        [SerializeField] private float m_radiusCollider = 0.17f;
+        public float RadiusCollider => m_radiusCollider;
     }
 }

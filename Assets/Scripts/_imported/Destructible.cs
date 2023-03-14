@@ -114,8 +114,8 @@ namespace SpaceShooter
 
         protected void Use(EnemyAsset asset)
         {
-            m_HitPoints = asset.hitpoint;
-            m_ScoreValue = asset.score;
+            m_HitPoints = asset.HitPoint;
+            m_ScoreValue = asset.Score;
         }
     }
 
