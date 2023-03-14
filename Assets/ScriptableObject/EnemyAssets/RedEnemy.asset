@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ea7db1df7b81f43a842ac8e304cc6b, type: 3}
   m_Name: RedEnemy
   m_EditorClassIdentifier: 
-  color: {r: 1, g: 0.23018867, b: 0.23018867, a: 1}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  spriteScale: {x: 4, y: 4}
+  animations: {fileID: 9100000, guid: f78fa9062ef8f0f4387ce3fdcd7d7e44, type: 2}
+  moveSpeed: 1
+  hitpoint: 1
+  score: 1
+  radiusCollider: 0.34

@@ -1,3 +1,5 @@
+using System;
+using TowerDefense;
 using UnityEngine;
 
 namespace SpaceShooter
@@ -129,6 +131,11 @@ namespace SpaceShooter
         public void Fire(TurretMode mode)
         {
             return;
+        }
+        public void Use(EnemyAsset asset)
+        {
+            m_MaxLinearVelocity = asset.moveSpeed;
+            base.Use(asset);
         }
 
         /*

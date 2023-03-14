@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TowerDefense;
 
 namespace SpaceShooter
 {
@@ -110,6 +111,12 @@ namespace SpaceShooter
         [SerializeField] private int m_ScoreValue;
         public int ScoreValue => m_ScoreValue;
         #endregion
+
+        protected void Use(EnemyAsset asset)
+        {
+            m_HitPoints = asset.hitpoint;
+            m_ScoreValue = asset.score;
+        }
     }
 
 }

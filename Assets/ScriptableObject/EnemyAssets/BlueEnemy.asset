@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ea7db1df7b81f43a842ac8e304cc6b, type: 3}
   m_Name: BlueEnemy
   m_EditorClassIdentifier: 
-  color: {r: 0.2906372, g: 0.41553497, b: 0.9811321, a: 1}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  spriteScale: {x: 2, y: 2}
+  animations: {fileID: 9100000, guid: 41054b8249797914ca91dc0f1ea70247, type: 2}
+  moveSpeed: 2
+  hitpoint: 1
+  score: 1
+  radiusCollider: 0.17
