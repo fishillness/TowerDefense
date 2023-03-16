@@ -219,6 +219,21 @@ MonoBehaviour:
   m_FindNewTargetTime: 0
   m_ShootDelay: 0
   m_EvadeRayLenght: 0
+  OnEndPath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1808634407312102185}
+        m_TargetAssemblyTypeName: TowerDefense.Enemy, Assembly-CSharp
+        m_MethodName: DamagePlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1808634407312102185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00ed1487b618454e957cc836ff91573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_damage: 1
 --- !u!1 &5451353832791341635
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ namespace TowerDefense
     [RequireComponent(typeof(TDPatrolController))]
     public class Enemy : MonoBehaviour
     {
+        [SerializeField] private int m_damage;
+
         public void Use(EnemyAsset asset)
         {
             var spriteRenderer = transform.Find("Sprite").GetComponent<SpriteRenderer>();
@@ -18,6 +20,13 @@ namespace TowerDefense
             GetComponent<SpaceShip>().Use(asset);
 
             GetComponentInChildren<CircleCollider2D>().radius = asset.RadiusCollider;
+
+            m_damage = asset.Damage;
+        }
+
+        public void DamagePlayer()
+        {
+            Player.Instance.ApplyDamage(m_damage);
         }
     }
 #if UNITY_EDITOR

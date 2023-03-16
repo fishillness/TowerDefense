@@ -19,3 +19,4 @@ MonoBehaviour:
   m_hitpoint: 20
   m_score: 3
   m_radiusCollider: 0.34
+  m_damage: 1

@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 using SpaceShooter;
 
 namespace TowerDefense
 {
     public class TDPatrolController : AIController
     {
+        [SerializeField] private UnityEvent OnEndPath;
         private Path m_path;
         private int pathIndex;
         public void SetPath(Path path)
@@ -22,8 +24,8 @@ namespace TowerDefense
             }
             else
             {
+                OnEndPath?.Invoke();
                 Destroy(gameObject);
-                //TO DO урон лагерю
             }
         }
     }

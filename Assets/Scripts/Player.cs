@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace SpaceShooter
@@ -22,6 +23,7 @@ namespace SpaceShooter
         /// —сылка на префаб корабл€.
         /// </summary>
         [SerializeField] private GameObject m_PlayerShipPrefab;
+        
         /// <summary>
         /// Link to the camera controller.
         /// —сылка на контроллер камеры.
@@ -45,7 +47,8 @@ namespace SpaceShooter
 
         private void Start()
         {
-            m_Ship.EventOnDeath.AddListener(OnShipDeath);
+            if (m_Ship)
+                m_Ship.EventOnDeath.AddListener(OnShipDeath);
             Respawn();
         }
 
@@ -97,6 +100,12 @@ namespace SpaceShooter
         public void AddNumLives(int num)
         {
             m_NumLives += num;
+        }
+        public void ApplyDamage(int m_damage)
+        {
+            m_NumLives -= m_damage;
+            if (m_NumLives <= 0)
+                LevelSequenceController.Instance.FinishCurrentLevel(false);
         }
         #endregion
     }
