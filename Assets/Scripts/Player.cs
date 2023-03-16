@@ -73,8 +73,6 @@ namespace SpaceShooter
                 //m_CameraController.SetTarget(m_Ship.transform);
                 //m_MovementController.SetTargetShip(m_Ship);
             }
-
-
         }
         #endregion
 
@@ -105,7 +103,10 @@ namespace SpaceShooter
         {
             m_NumLives -= m_damage;
             if (m_NumLives <= 0)
-                LevelSequenceController.Instance.FinishCurrentLevel(false);
+            {
+                Debug.Log("End level");
+                // LevelSequenceController.Instance.FinishCurrentLevel(false);
+            }
         }
         #endregion
     }

@@ -20,3 +20,4 @@ MonoBehaviour:
   m_score: 5
   m_radiusCollider: 0.34
   m_damage: 2
+  m_gold: 3

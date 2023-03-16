@@ -28,7 +28,10 @@ namespace TowerDefense
         [SerializeField] private float m_radiusCollider = 0.17f;
         public float RadiusCollider => m_radiusCollider;
 
-        [SerializeField] private int m_damage;
+        [SerializeField] private int m_damage = 1;
         public int Damage => m_damage;
+
+        [SerializeField] int m_gold = 1;
+        public int Gold => m_gold;
     }
 }
