@@ -37,7 +37,6 @@ namespace SpaceShooter
         #endregion
 
         #region Unity Events
-
         protected override void Awake()
         {
             base.Awake();
@@ -74,6 +73,15 @@ namespace SpaceShooter
                 //m_MovementController.SetTargetShip(m_Ship);
             }
         }
+        protected void ApplyDamage(int m_damage)
+        {
+            m_NumLives -= m_damage;
+            if (m_NumLives <= 0)
+            {
+                Debug.Log("End level");
+                // LevelSequenceController.Instance.FinishCurrentLevel(false);
+            }
+        }
         #endregion
 
         #region Score
@@ -98,15 +106,6 @@ namespace SpaceShooter
         public void AddNumLives(int num)
         {
             m_NumLives += num;
-        }
-        public void ApplyDamage(int m_damage)
-        {
-            m_NumLives -= m_damage;
-            if (m_NumLives <= 0)
-            {
-                Debug.Log("End level");
-                // LevelSequenceController.Instance.FinishCurrentLevel(false);
-            }
         }
         #endregion
     }

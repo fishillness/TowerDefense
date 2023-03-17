@@ -31,12 +31,12 @@ namespace TowerDefense
 
         public void DamagePlayer()
         {
-            Player.Instance.ApplyDamage(m_damage);
+            TDPlayer.Instance.ReduceLife(m_damage);
         }
 
         public void GivePlayerGold()
         {
-            (Player.Instance as TDPlayer)?.ChangeGold(m_gold);
+            TDPlayer.Instance.ChangeGold(m_gold);
         }
         #endregion
     }
