@@ -10,7 +10,6 @@ namespace TowerDefense
         [SerializeField] private Text m_text;
         [SerializeField] private Button m_button;
         [SerializeField] private Transform m_buildSite;
-        public Transform BuildSite { set { m_buildSite = value; } }
         #endregion
         #region Unity Events
         private void Start()
@@ -29,9 +28,15 @@ namespace TowerDefense
         }
         #endregion
         #region Public API
+        public void SetBuildSite(Transform value)
+        {
+            m_buildSite = value;
+        }
+
         public void Buy()
         {
             TDPlayer.Instance.TryBuild(m_towerAsset, m_buildSite);
+            BuildSite.HideControls();
         }
         #endregion
     }
