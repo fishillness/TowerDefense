@@ -8,20 +8,23 @@ namespace TowerDefense
     {
         #region Properties
         public static new TDPlayer Instance => Player.Instance as TDPlayer;
+        private static event Action<int> OnGoldUpdate;
+        public static void GoldUpdateSubscribe(Action<int> act)
+        {
+            OnGoldUpdate += act;
+            act(Instance.m_gold);
+        }
+        private static event Action<int> OnLifeUpdate;
+        public static void LifeUpdateSubscribe(Action<int> act)
+        {
+            OnLifeUpdate += act;
+            act(Instance.NumLives);
+        }
 
         [SerializeField] private int m_gold = 0;
-
-        public static event Action<int> OnGoldUpdate;
-        public static event Action<int> OnLifeUpdate;
+        [SerializeField] private Tower m_towerPrefab;
         #endregion
 
-        #region Unity Events
-        private void Start()
-        {
-            OnGoldUpdate(m_gold);
-            OnLifeUpdate(NumLives);
-        }
-        #endregion
         #region Public API
         public void ChangeGold(int change)
         {
@@ -32,6 +35,17 @@ namespace TowerDefense
         {
             ApplyDamage(change);
             OnLifeUpdate(NumLives);
+        }
+
+        //TODO: сделать проверку на кол-во золота
+        public void TryBuild(TowerAsset towerAsset, Transform buildSite)
+        {
+            //if (m_gold >= m_towerAsset.GoldCost)
+            ChangeGold(-towerAsset.GoldCost);
+            var tower = Instantiate<Tower>(m_towerPrefab, buildSite.position, Quaternion.identity);
+            tower.GetComponentInChildren<SpriteRenderer>().sprite = towerAsset.Sprite;
+           
+            Destroy(buildSite.gameObject);
         }
         #endregion
     }

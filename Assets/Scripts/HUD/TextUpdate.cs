@@ -13,16 +13,16 @@ namespace TowerDefense
         [SerializeField] private UpdateSource source;
         private Text m_text;
 
-        private void Awake()
+        private void Start()
         {
             m_text = GetComponent<Text>();
             switch (source)
             {
                 case UpdateSource.Gold:
-                    TDPlayer.OnGoldUpdate += UpdateText;
+                    TDPlayer.GoldUpdateSubscribe(UpdateText);
                     break;
                 case UpdateSource.Life:
-                    TDPlayer.OnLifeUpdate += UpdateText;
+                    TDPlayer.LifeUpdateSubscribe(UpdateText);
                     break;
             }            
         }
