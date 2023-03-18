@@ -79,7 +79,8 @@ namespace SpaceShooter
             if (m_NumLives <= 0)
             {
                 Debug.Log("End level");
-                // LevelSequenceController.Instance.FinishCurrentLevel(false);
+                //LevelSequenceController.Instance.FinishCurrentLevel(false);
+                LevelSequenceController.Instance.RestartLevel();
             }
         }
         #endregion
