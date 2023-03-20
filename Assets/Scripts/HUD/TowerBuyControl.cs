@@ -20,7 +20,7 @@ namespace TowerDefense
         }
         private void GoldStatusCheck(int gold)
         {
-            if (gold > m_towerAsset.GoldCost != m_button.interactable)
+            if (gold >= m_towerAsset.GoldCost != m_button.interactable)
             {
                 m_button.interactable = !m_button.interactable;
                 m_text.color = m_button.interactable ? Color.white : Color.red;
