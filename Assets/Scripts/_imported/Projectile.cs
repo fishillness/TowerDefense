@@ -2,7 +2,6 @@ using UnityEngine;
 
 namespace SpaceShooter
 {
-
     public class Projectile : Entity
     {
         #region Properties
@@ -20,7 +19,7 @@ namespace SpaceShooter
         /// Projectile damage.
         /// Урон снаряда.
         /// </summary>
-        [SerializeField] private int m_Damage;
+        [SerializeField] protected int m_Damage;
         /// <summary>
         /// Link to the explosion prefab.
         /// Ссылка на префаб взрыва.
@@ -50,21 +49,7 @@ namespace SpaceShooter
 
                 if (dest != null && dest != m_Parent)
                 {
-                    dest.ApplyDamage(m_Damage);
-
-                    if (Player.Instance != null && dest.HitPoints < 0)
-                    {
-                        if (m_Parent == Player.Instance.ActiveShip)
-                        {
-                            Player.Instance.AddScore(dest.ScoreValue);
-                            /*if (dest.HitPoints <= 0 && dest.GetComponent<SpaceShip>() != null &&
-                                dest.TeamId != Player.Instance.ActiveShip.TeamId) //
-                            {
-                                Player.Instance.AddKill();
-                            }*/
-                        }
-                    }
-                    
+                    HitObject(dest);
                 }
                 OnProjectileLifeEnd(hit.collider, hit.point);
             }
@@ -74,6 +59,25 @@ namespace SpaceShooter
                 Destroy(gameObject);
 
             transform.position += new Vector3(step.x, step.y, 0);
+        }
+
+        protected virtual void HitObject(Destructible dest)
+        {
+            dest.ApplyDamage(m_Damage);
+
+            if (Player.Instance != null && dest.HitPoints < 0)
+            {
+                if (m_Parent == Player.Instance.ActiveShip)
+                {
+                    Player.Instance.AddScore(dest.ScoreValue);
+                    /*if (dest.HitPoints <= 0 && dest.GetComponent<SpaceShip>() != null &&
+                        dest.TeamId != Player.Instance.ActiveShip.TeamId) //
+                    {
+                        Player.Instance.AddKill();
+                    }*/
+                }
+            }
+
         }
 
         /*private void OnShipDeath()
@@ -88,7 +92,7 @@ namespace SpaceShooter
         #endregion
 
         #region Public API
-        private Destructible m_Parent;
+        protected Destructible m_Parent;
         public void SetParentShoter(Destructible parent)
         {
             m_Parent = parent;

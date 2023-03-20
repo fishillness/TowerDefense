@@ -111,7 +111,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5068911700968320517}
-  - component: {fileID: 5068911700968320516}
+  - component: {fileID: 2606549456032946350}
   m_Layer: 0
   m_Name: Projectile-Fireball
   m_TagString: Untagged
@@ -127,14 +127,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5068911700968320515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.7164316, y: 0.69678795, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5068911700661434109}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5068911700968320516
+--- !u!114 &2606549456032946350
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,11 +143,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5068911700968320515}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c32a1fa93006e42449aa5c39e1adb30b, type: 3}
+  m_Script: {fileID: 11500000, guid: 870b5809003a0cf4392fb0af3cb335bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Nickname: 
   m_Velocity: 5
   m_Lifetime: 1
-  m_Damage: 15
+  m_Damage: 1
   m_impactEffectPrefab: {fileID: 0}
