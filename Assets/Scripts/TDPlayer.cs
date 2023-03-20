@@ -37,13 +37,16 @@ namespace TowerDefense
             OnLifeUpdate(NumLives);
         }
 
-        //TODO: сделать проверку на кол-во золота
         public void TryBuild(TowerAsset towerAsset, Transform buildSite)
         {
-            //if (m_gold >= m_towerAsset.GoldCost)
             ChangeGold(-towerAsset.GoldCost);
             var tower = Instantiate<Tower>(m_towerPrefab, buildSite.position, Quaternion.identity);
             tower.GetComponentInChildren<SpriteRenderer>().sprite = towerAsset.Sprite;
+
+            if (towerAsset.TurretProperties)
+            {
+                tower.GetComponentInChildren<Turret>().SetTurretProperties(towerAsset.TurretProperties);
+            }
            
             Destroy(buildSite.gameObject);
         }

@@ -15,3 +15,4 @@ MonoBehaviour:
   m_goldCost: 15
   m_sprite: {fileID: 21300000, guid: 961542bf834d173448be6e9b235a3b66, type: 3}
   m_spriteGUI: {fileID: 21300000, guid: b3bb45350dd912e4fa4347e45fe340c9, type: 3}
+  m_turretProperties: {fileID: 11400000, guid: ec285d440c8894749ba43c1194c60958, type: 2}

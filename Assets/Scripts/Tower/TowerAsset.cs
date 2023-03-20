@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using SpaceShooter;
 
 namespace TowerDefense
 {
@@ -13,5 +14,8 @@ namespace TowerDefense
 
         [SerializeField] private Sprite m_spriteGUI;
         public Sprite SpriteGUI => m_spriteGUI;
+
+        [SerializeField] private TurretProperties m_turretProperties;
+        public TurretProperties TurretProperties => m_turretProperties;
     }
 }
