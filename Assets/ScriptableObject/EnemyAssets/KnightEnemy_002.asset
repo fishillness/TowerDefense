@@ -18,5 +18,7 @@ MonoBehaviour:
   m_moveSpeed: 1.5
   m_hitpoint: 15
   m_score: 2
-  m_radiusCollider: 0.34
+  m_radiusCollider: 0.24
   m_damage: 1
+  m_gold: 1
+  m_invulnerabilityOfFire: 0

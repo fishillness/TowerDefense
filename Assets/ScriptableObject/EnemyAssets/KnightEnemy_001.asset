@@ -15,8 +15,10 @@ MonoBehaviour:
   m_color: {r: 1, g: 1, b: 1, a: 1}
   m_spriteScale: {x: 2, y: 2}
   m_animations: {fileID: 9100000, guid: 41054b8249797914ca91dc0f1ea70247, type: 2}
-  m_moveSpeed: 2
+  m_moveSpeed: 1
   m_hitpoint: 10
   m_score: 1
   m_radiusCollider: 0.14
   m_damage: 1
+  m_gold: 1
+  m_invulnerabilityOfFire: 0

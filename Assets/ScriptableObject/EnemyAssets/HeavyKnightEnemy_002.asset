@@ -16,8 +16,9 @@ MonoBehaviour:
   m_spriteScale: {x: 4, y: 4}
   m_animations: {fileID: 9100000, guid: f78fa9062ef8f0f4387ce3fdcd7d7e44, type: 2}
   m_moveSpeed: 0.5
-  m_hitpoint: 45
+  m_hitpoint: 70
   m_score: 6
-  m_radiusCollider: 0.43
-  m_damage: 2
-  m_gold: 4
+  m_radiusCollider: 0.24
+  m_damage: 1
+  m_gold: 3
+  m_invulnerabilityOfFire: 1
