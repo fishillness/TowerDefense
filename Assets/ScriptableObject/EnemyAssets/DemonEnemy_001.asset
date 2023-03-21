@@ -21,3 +21,4 @@ MonoBehaviour:
   m_radiusCollider: 0.34
   m_damage: 3
   m_gold: 5
+  m_invulnerabilityOfFire: 1

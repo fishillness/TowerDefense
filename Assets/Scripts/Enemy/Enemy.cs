@@ -11,6 +11,8 @@ namespace TowerDefense
         #region Properties
         [SerializeField] private int m_damage;
         [SerializeField] private int m_gold;
+        [SerializeField] private bool invulnerabilityOfFire;
+        public bool IsInvulnerableOfFire => invulnerabilityOfFire;
         #endregion
 
         #region Public API
@@ -27,6 +29,8 @@ namespace TowerDefense
 
             m_damage = asset.Damage;
             m_gold = asset.Gold;
+
+            invulnerabilityOfFire = asset.IsInvulnerableOfFire;
         }
 
         public void DamagePlayer()

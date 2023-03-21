@@ -33,5 +33,8 @@ namespace TowerDefense
 
         [SerializeField] int m_gold = 1;
         public int Gold => m_gold;
+
+        [SerializeField] private bool m_invulnerabilityOfFire;
+        public bool IsInvulnerableOfFire => m_invulnerabilityOfFire;
     }
 }

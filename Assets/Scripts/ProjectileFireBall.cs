@@ -7,26 +7,30 @@ namespace TowerDefense
     {
         protected override void HitObject(Destructible dest)
         {
-            dest.ApplyDamage(m_Damage);
-
-            var fire = dest.GetComponentInChildren<Fire>();
-            if (fire)
+            var enemy = dest.GetComponent<Enemy>();
+            if (enemy != null && !enemy.IsInvulnerableOfFire)
             {
-                fire.SetFireActive(dest);
-            }
-
-            if (Player.Instance != null && dest.HitPoints < 0)
-            {
-                if (m_Parent == Player.Instance.ActiveShip)
+                dest.ApplyDamage(m_Damage);
+                
+                var fire = dest.GetComponentInChildren<Fire>();
+                if (fire)
                 {
-                    Player.Instance.AddScore(dest.ScoreValue);
-                    /*if (dest.HitPoints <= 0 && dest.GetComponent<SpaceShip>() != null &&
-                        dest.TeamId != Player.Instance.ActiveShip.TeamId) //
+                    fire.SetFireActive(dest);
+                }
+                
+                if (Player.Instance != null && dest.HitPoints < 0)
+                {
+                    if (m_Parent == Player.Instance.ActiveShip)
                     {
-                        Player.Instance.AddKill();
-                    }*/
-                }   
-            }
+                        Player.Instance.AddScore(dest.ScoreValue);
+                            /*if (dest.HitPoints <= 0 && dest.GetComponent<SpaceShip>() != null &&
+                                dest.TeamId != Player.Instance.ActiveShip.TeamId) //
+                            {
+                                Player.Instance.AddKill();
+                            }*/
+                    }
+                }
+            }            
         }
     }
 }
