@@ -5,6 +5,9 @@ namespace SpaceShooter
 {
     public class ResultPanelController : SingletonBase<ResultPanelController>
     {
+        [SerializeField] private GameObject m_WinPanel;
+        [SerializeField] private GameObject m_LosePanel;
+
         [SerializeField] private Text m_Kills;
         [SerializeField] private Text m_Score;
         [SerializeField] private Text m_Time;
@@ -15,16 +18,19 @@ namespace SpaceShooter
 
         private void Start()
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
-        public void ShowResults(PlayerStatistics levelResult, bool success)
+        public void ShowResults(bool success)//(PlayerStatistics levelResult, bool success)
         {
-            gameObject.SetActive(true);
-            m_Success = success;
-            m_Result.text = success ? "Win" : "Lose";
-            m_ButtonText.text = success ? "Next" : "Restart";
+            m_WinPanel?.gameObject.SetActive(success);
+            m_LosePanel?.gameObject.SetActive(!success);
 
-            m_Kills.text = "Kills: " + levelResult.numKills.ToString();
+            m_Success = success;
+            /*gameObject.SetActive(true);            
+            m_Result.text = success ? "Win" : "Lose";
+            m_ButtonText.text = success ? "Next" : "Restart";*/
+
+            /*m_Kills.text = "Kills: " + levelResult.numKills.ToString();
             m_Score.text = "Score: " + levelResult.score.ToString();
             m_Time.text = "Time: " + levelResult.time.ToString();
 
@@ -35,12 +41,25 @@ namespace SpaceShooter
                 GameStatistics.Instance.AddLevelTime(levelResult.time);
             }
             if (!success)
-                levelResult.Reset();
-            
+                levelResult.Reset();*/
+
             Time.timeScale = 0;
         }
+        ///////////////////////////////////////////////////////
+        public void OnPlayNext()
+        {
+            Time.timeScale = 1;
+            LevelSequenceController.Instance.AdvanceLevel();
+        }
 
-        public void OnButtonNextAction()
+        public void OnRestartLevel()
+        {
+            Time.timeScale = 1;
+            LevelSequenceController.Instance.RestartLevel();
+        }
+        ///////////////////////////////////////////////////////
+
+        /*public void OnButtonNextAction()
         {
             gameObject.SetActive(false);
             Time.timeScale = 1;
@@ -52,7 +71,7 @@ namespace SpaceShooter
             {
                 LevelSequenceController.Instance.RestartLevel();
             }
-        }
+        }*/
 
     }
 }

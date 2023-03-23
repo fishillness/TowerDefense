@@ -12,6 +12,7 @@ namespace SpaceShooter
         /// </summary>
         [SerializeField] private int m_NumLives;
         public int NumLives => m_NumLives;
+        public event Action OnPlayerDead;
         /// <summary>
         /// Link to the ship.
         /// —сылка на корабль.
@@ -73,14 +74,18 @@ namespace SpaceShooter
                 //m_MovementController.SetTargetShip(m_Ship);
             }
         }
+
         protected void ApplyDamage(int m_damage)
         {
             m_NumLives -= m_damage;
             if (m_NumLives <= 0)
             {
                 Debug.Log("End level");
+                m_NumLives = 0;
+                OnPlayerDead?.Invoke();
                 //LevelSequenceController.Instance.FinishCurrentLevel(false);
-                LevelSequenceController.Instance.RestartLevel();
+                
+                //LevelSequenceController.Instance.RestartLevel();
             }
         }
         #endregion

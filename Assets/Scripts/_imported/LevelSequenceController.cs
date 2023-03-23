@@ -33,9 +33,10 @@ namespace SpaceShooter
         public void FinishCurrentLevel(bool success)
         {
             LastLevelResult = success;
-            CalculateLevelStatistic();
+            //CalculateLevelStatistic();
 
-            ResultPanelController.Instance.ShowResults(levelStatistics, success);
+            ResultPanelController.Instance.ShowResults(success);
+            //ResultPanelController.Instance.ShowResults(levelStatistics, success);
         }
 
         public void AdvanceLevel()
