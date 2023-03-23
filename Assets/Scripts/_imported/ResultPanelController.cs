@@ -43,18 +43,18 @@ namespace SpaceShooter
             if (!success)
                 levelResult.Reset();*/
 
-            Time.timeScale = 0;
+           // Time.timeScale = 0;
         }
         ///////////////////////////////////////////////////////
         public void OnPlayNext()
         {
-            Time.timeScale = 1;
+           // Time.timeScale = 1;
             LevelSequenceController.Instance.AdvanceLevel();
         }
 
         public void OnRestartLevel()
         {
-            Time.timeScale = 1;
+           // Time.timeScale = 1;
             LevelSequenceController.Instance.RestartLevel();
         }
         ///////////////////////////////////////////////////////
