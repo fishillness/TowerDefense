@@ -7,13 +7,9 @@ namespace TowerDefense
     [Serializable]
     public class Saver<T>
     {
-        private static string Path(string filename)
-        {
-            return $"{Application.persistentDataPath}/{filename}";
-        }
         public static void TryLoad(string fileName, ref T data)
         {
-            var path = Path(fileName);
+            var path = FileHandler.Path(fileName);
 
             if (File.Exists(path))
             {
@@ -22,13 +18,31 @@ namespace TowerDefense
                 data = saver.data;
             }
         }
-
         public static void Save(string fileName, T data)
         {
             var wrapper = new Saver<T> { data = data };
             var dataString = JsonUtility.ToJson(wrapper);
-            File.WriteAllText(Path(fileName), dataString);
+            File.WriteAllText(FileHandler.Path(fileName), dataString);
         }
         public T data;
+    }
+    public static class FileHandler
+    {
+        public static string Path(string filename)
+        {
+            return $"{Application.persistentDataPath}/{filename}";
+        }
+        public static void Reset(string fileName)
+        {
+            var path = Path(fileName);
+            if (File.Exists(path))
+            {
+                File.Exists(path);
+            }
+        }
+        public static bool HasFile(string filename)
+        {
+            return File.Exists(Path(filename));
+        }
     }
 }

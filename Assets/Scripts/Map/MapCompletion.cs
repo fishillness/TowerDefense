@@ -6,7 +6,11 @@ namespace TowerDefense
 {
     public class MapCompletion : SingletonBase<MapCompletion>
     {
-        const string m_fileName = "completion.dat";
+        public const string m_filename = "completion.dat";
+        /*public static void ResetSavedData()
+        {
+            Saver<EpisodeScore[]>.Reset(m_filename);
+        }*/
         [Serializable]
         private class EpisodeScore
         {
@@ -27,7 +31,7 @@ namespace TowerDefense
                     if (levelScore > item.m_score)
                     {
                         item.m_score = levelScore;
-                        Saver<EpisodeScore[]>.Save(m_fileName, m_completionDate);
+                        Saver<EpisodeScore[]>.Save(m_filename, m_completionDate);
                     }
                 }
             }
@@ -38,7 +42,7 @@ namespace TowerDefense
         private new void Awake()
         {
             base.Awake();
-            Saver<EpisodeScore[]>.TryLoad(m_fileName, ref m_completionDate);
+            Saver<EpisodeScore[]>.TryLoad(m_filename, ref m_completionDate);
         }
 
         public bool TryIndex(int id, out Episode episode, out int score)
