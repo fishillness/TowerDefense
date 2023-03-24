@@ -6,7 +6,7 @@ namespace SpaceShooter
     public class LevelSequenceController : SingletonBase<LevelSequenceController>
     {
         public static string MainMenuSceneNickname = "Map";
-        public Episode CurrentEpissode { get; private set; }
+        public Episode CurrentEpisode { get; private set; }
         public int CurrentLevel { get; private set; }
         public static SpaceShip PlayerShip { get; set; }
         public bool LastLevelResult { get; private set; }
@@ -15,7 +15,7 @@ namespace SpaceShooter
 
         public void StartEpisode(Episode e)
         {
-            CurrentEpissode = e;
+            CurrentEpisode = e;
             CurrentLevel = 0;
 
             levelStatistics = new PlayerStatistics();
@@ -44,13 +44,13 @@ namespace SpaceShooter
             levelStatistics.Reset();
             CurrentLevel++;
 
-            if (CurrentEpissode.Levels.Length <= CurrentLevel)  
+            if (CurrentEpisode.Levels.Length <= CurrentLevel)  
             {
                 SceneManager.LoadScene(MainMenuSceneNickname);
             }
             else
             {
-                SceneManager.LoadScene(CurrentEpissode.Levels[CurrentLevel]);
+                SceneManager.LoadScene(CurrentEpisode.Levels[CurrentLevel]);
             }
         }
 
