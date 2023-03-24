@@ -6,39 +6,55 @@ namespace TowerDefense
 {
     public class MapCompletion : SingletonBase<MapCompletion>
     {
+        const string m_fileName = "completion.dat";
         [Serializable]
         private class EpisodeScore
         {
             public Episode m_episode;
             public int m_score;
         }
-        [SerializeField] private EpisodeScore[] m_completiomDate;
-        public bool TryIndex(int id, out Episode episode, out int score)
-        {
-            if (id >= 0 && id < m_completiomDate.Length)
-            {
-                episode = m_completiomDate[id].m_episode;
-                score = m_completiomDate[id].m_score;
-                return true;
-            }
-            episode = null;
-            score = 0;
-            return false;
-        }
+        #region Static method
         public static void SaveEpisodeResult(int levelScore)
         {
             Instance.SaveResult(LevelSequenceController.Instance.CurrentEpisode, levelScore);
         }
         private void SaveResult(Episode currentEpisode, int levelScore)
         {
-            foreach (var item in m_completiomDate)
+            foreach (var item in m_completionDate)
             {
                 if (item.m_episode == currentEpisode)
                 {
                     if (levelScore > item.m_score)
+                    {
                         item.m_score = levelScore;
+                        Saver<EpisodeScore[]>.Save(m_fileName, m_completionDate);
+                    }
                 }
             }
         }
+        #endregion
+        [SerializeField] private EpisodeScore[] m_completionDate;
+        
+        private new void Awake()
+        {
+            base.Awake();
+            Saver<EpisodeScore[]>.TryLoad(m_fileName, ref m_completionDate);
+        }
+
+        public bool TryIndex(int id, out Episode episode, out int score)
+        {
+            if (id >= 0 && id < m_completionDate.Length)
+            {
+                episode = m_completionDate[id].m_episode;
+                score = m_completionDate[id].m_score;
+                return true;
+            }
+            episode = null;
+            score = 0;
+            return false;
+        }
+            
+
+       
     }
 }

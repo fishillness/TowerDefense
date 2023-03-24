@@ -692,7 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 0
-  m_completiomDate:
+  m_completionDate:
   - m_episode: {fileID: 11400000, guid: 7a5bae2b6d536b247ae30f5d82f37b7b, type: 2}
     m_score: 0
   - m_episode: {fileID: 11400000, guid: 6a4cab9dfad873647a2f189e44eb53f3, type: 2}
