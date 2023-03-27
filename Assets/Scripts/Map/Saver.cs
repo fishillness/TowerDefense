@@ -37,7 +37,7 @@ namespace TowerDefense
             var path = Path(fileName);
             if (File.Exists(path))
             {
-                File.Exists(path);
+                File.Delete(path);
             }
         }
         public static bool HasFile(string filename)
