@@ -57,8 +57,5 @@ namespace TowerDefense
             score = 0;
             return false;
         }
-            
-
-       
     }
 }

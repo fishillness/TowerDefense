@@ -299,11 +299,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5117037997202290700, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 5117037997202290700, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 5117037997202290700, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
       propertyPath: m_LocalPosition.z
@@ -371,11 +371,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5117037997202290700, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.83
+      value: 2.14
       objectReference: {fileID: 0}
     - target: {fileID: 5117037997202290700, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.41
+      value: -1.84
       objectReference: {fileID: 0}
     - target: {fileID: 5117037997202290700, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
       propertyPath: m_LocalPosition.z
@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 958406370}
   - component: {fileID: 958406369}
   m_Layer: 0
-  m_Name: map_003
+  m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -500,7 +500,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 58bb456f18563e14f8db20f2abdaae14, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 654c2b699a473d04c96d33d3a35944b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -519,8 +519,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958406368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalPosition: {x: -0.12, y: 0.25, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -594,11 +594,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5117037997202290700, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.04
+      value: 3.67
       objectReference: {fileID: 0}
     - target: {fileID: 5117037997202290700, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.24
+      value: -0.38
       objectReference: {fileID: 0}
     - target: {fileID: 5117037997202290700, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
       propertyPath: m_LocalPosition.z
@@ -729,11 +729,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5117037997202290700, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5117037997202290700, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5
+      value: -2.08
       objectReference: {fileID: 0}
     - target: {fileID: 5117037997202290700, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
       propertyPath: m_LocalPosition.z

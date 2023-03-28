@@ -19,6 +19,8 @@ namespace SpaceShooter
         private void Start()
         {
             //gameObject.SetActive(false);
+            m_WinPanel.gameObject.SetActive(false);
+            m_LosePanel.gameObject.SetActive(false);
         }
         public void ShowResults(bool success)//(PlayerStatistics levelResult, bool success)
         {
