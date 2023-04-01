@@ -5,7 +5,9 @@ namespace TowerDefense
 {
     public class MapLevel : MonoBehaviour
     {
-        [SerializeField] private Text m_scoreText;
+        [SerializeField] private RectTransform m_resultPanel;
+        [SerializeField] private Image[] m_resultImages;
+        [SerializeField] private Sprite m_starOn;
         private Episode m_episode;
 
         public void LoadLevel()
@@ -16,7 +18,11 @@ namespace TowerDefense
         public void SetLevelDate(Episode episode, int score)
         {
             m_episode = episode;
-            m_scoreText.text = $"{score}/3";
+            m_resultPanel.gameObject.SetActive(score > 0);
+            for (int i = 0; i < score; i++)
+            {
+                m_resultImages[i].sprite = m_starOn;
+            }
         }
     }
 }
