@@ -5,7 +5,7 @@ namespace SpaceShooter
 {
     public interface ILevelCondition
     {
-        bool isCompleted { get; }
+        bool IsCompleted { get; }
     }
     public class LevelController : SingletonBase<LevelController>
     {   
@@ -41,7 +41,7 @@ namespace SpaceShooter
 
             foreach(var v in m_Conditions)
             {
-                if (v.isCompleted)
+                if (v.IsCompleted)
                     numCompleted++;
             }
             if (numCompleted == m_Conditions.Length)

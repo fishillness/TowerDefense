@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using SpaceShooter;
 using UnityEditor;
@@ -13,8 +14,10 @@ namespace TowerDefense
         [SerializeField] private int m_gold;
         [SerializeField] private bool invulnerabilityOfFire;
         public bool IsInvulnerableOfFire => invulnerabilityOfFire;
-        #endregion
 
+        public event Action OnEnd;
+        #endregion
+        private void OnDestroy() { OnEnd?.Invoke(); }
         #region Public API
         public void Use(EnemyAsset asset)
         {

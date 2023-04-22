@@ -8,15 +8,35 @@ namespace TowerDefense
         [SerializeField] private Enemy m_EnemyPrefabs;
         [SerializeField] private Path[] m_paths;
         [SerializeField] private EnemyWave m_currentWave;
+        private int m_activeEnemyCount = 0; 
+        public event Action OnAllWavesDead;
+        
         private void Start()
         {
             m_currentWave.Prepare(SpawnEnemies);
         }
-
+        private void RecordEnemyDead()
+        {
+            if (--m_activeEnemyCount == 0)
+            {
+                ForceNextWave();
+            }
+        }
         public void ForceNextWave()
         {
-            TDPlayer.Instance.ChangeGold( (int) m_currentWave.GetRemainingTime());
-            SpawnEnemies();
+            if (m_currentWave)
+            {
+                TDPlayer.Instance.ChangeGold((int)m_currentWave.GetRemainingTime());
+                SpawnEnemies();
+            }
+            else
+            {
+                if (m_activeEnemyCount == 0)
+                {
+                    Debug.Log("All Waves Dead");
+                    OnAllWavesDead?.Invoke();
+                }
+            } 
         }
 
         private void SpawnEnemies()
@@ -30,8 +50,10 @@ namespace TowerDefense
                         var e = Instantiate(m_EnemyPrefabs, 
                             m_paths[pathIndex].StartArea.GetRandomInsideZone(), 
                             Quaternion.identity);
+                        e.OnEnd += RecordEnemyDead;
                         e.Use(asset);
                         e.GetComponent<TDPatrolController>().SetPath(m_paths[pathIndex]);
+                        m_activeEnemyCount += 1;
                     }
                 }
                 else

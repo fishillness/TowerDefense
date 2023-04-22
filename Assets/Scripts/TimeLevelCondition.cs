@@ -10,6 +10,6 @@ namespace TowerDefense
         {
             timeLimit += Time.time;
         }
-        public bool isCompleted => Time.time > timeLimit;        
+        public bool IsCompleted => Time.time > timeLimit;        
     }
 }

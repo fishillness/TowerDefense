@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 314074036}
   - component: {fileID: 314074037}
   - component: {fileID: 314074038}
-  - component: {fileID: 314074040}
+  - component: {fileID: 314074039}
   m_Layer: 0
   m_Name: PlayerCamp
   m_TagString: Untagged
@@ -482,7 +482,7 @@ MonoBehaviour:
   m_NumLives: 10
   m_Ship: {fileID: 0}
   m_PlayerShipPrefab: {fileID: 0}
-  m_gold: 25
+  m_gold: 1000
   m_towerPrefab: {fileID: 5599019301281930403, guid: 23143df3628056042ac283c0f11ccf47, type: 3}
 --- !u!114 &314074038
 MonoBehaviour:
@@ -497,11 +497,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 0
-  m_ReferenceTime: 6
+  m_ReferenceTime: 20
   m_EventLevelCompleted:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &314074040
+--- !u!114 &314074039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -510,10 +510,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 314074035}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cfbb53640851614b8a2cd210e156b36, type: 3}
+  m_Script: {fileID: 11500000, guid: 53c977661a4209f4eaa5ed981a1a2dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 80
 --- !u!1 &350923413
 GameObject:
   m_ObjectHideFlags: 0
