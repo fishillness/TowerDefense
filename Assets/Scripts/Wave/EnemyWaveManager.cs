@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace TowerDefense
@@ -10,6 +11,12 @@ namespace TowerDefense
         private void Start()
         {
             m_currentWave.Prepare(SpawnEnemies);
+        }
+
+        public void ForceNextWave()
+        {
+            TDPlayer.Instance.ChangeGold( (int) m_currentWave.GetRemainingTime());
+            SpawnEnemies();
         }
 
         private void SpawnEnemies()

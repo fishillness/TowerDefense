@@ -6,6 +6,7 @@ namespace TowerDefense
 {
     public class EnemyWave : MonoBehaviour
     {
+        public static Action<float> OnWavePrepare;
         [Serializable] private class Squad
         {
             public EnemyAsset m_asset;
@@ -20,6 +21,7 @@ namespace TowerDefense
         [SerializeField] private float m_prepareTime = 10f;
         [SerializeField] private EnemyWave m_nextWave;
         private event Action OnWaveReady;
+        public float GetRemainingTime() { return m_prepareTime - Time.time; }
 
         #region Unity Events
         private void Awake()
@@ -39,6 +41,7 @@ namespace TowerDefense
         #region Public API
         public void Prepare(Action spawnEnemies)
         {
+            OnWavePrepare?.Invoke(m_prepareTime);
             m_prepareTime += Time.time;
             enabled = true;
             OnWaveReady += spawnEnemies;
