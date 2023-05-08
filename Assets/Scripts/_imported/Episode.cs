@@ -13,9 +13,6 @@ namespace SpaceShooter
 
         [SerializeField] private Sprite m_PreviewImage;
         public Sprite PreviewImage => m_PreviewImage;
-
-
-
     }
 }
 

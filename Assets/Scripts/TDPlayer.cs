@@ -14,13 +14,20 @@ namespace TowerDefense
             OnGoldUpdate += act;
             act(Instance.m_gold);
         }
+        public static void GoldUpdateUnsubscribe(Action<int> act)
+        {
+            OnGoldUpdate -= act;
+        }
         public static event Action<int> OnLifeUpdate;
         public static void LifeUpdateSubscribe(Action<int> act)
         {
             OnLifeUpdate += act;
             act(Instance.NumLives);
         }
-
+        public static void LifeUpdateUnsubscribe(Action<int> act)
+        {
+            OnLifeUpdate -= act;
+        }
         [SerializeField] private int m_gold = 0;
         [SerializeField] private Tower m_towerPrefab;
         #endregion

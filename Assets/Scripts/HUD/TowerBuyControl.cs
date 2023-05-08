@@ -18,6 +18,11 @@ namespace TowerDefense
             m_text.text = m_towerAsset.GoldCost.ToString();
             m_button.GetComponent<Image>().sprite = m_towerAsset.SpriteGUI;
         }
+        private void OnDestroy()
+        {
+            TDPlayer.GoldUpdateUnsubscribe(GoldStatusCheck);
+        }
+
         private void GoldStatusCheck(int gold)
         {
             if (gold >= m_towerAsset.GoldCost != m_button.interactable)
