@@ -42,18 +42,26 @@ namespace TowerDefense
         }
 
         [SerializeField] private EpisodeScore[] m_completionDate;
-        private int totalScore;
-
-        public int TotalScore => totalScore;
+        //private int totalScore;
+       // public int TotalScore => totalScore;
 
         private new void Awake()
         {
             base.Awake();
             Saver<EpisodeScore[]>.TryLoad(m_filename, ref m_completionDate);
-            foreach (var episodeScore in m_completionDate)
+            /*foreach (var episodeScore in m_completionDate)
             {
                 totalScore += episodeScore.m_score;
+            }*/
+        }
+        public int GetTotalScore()
+        {
+            var totalscore = 0;
+            foreach (var episodeScore in m_completionDate)
+            {
+                totalscore += episodeScore.m_score;
             }
+            return totalscore;
         }
         public int GetEpisodeScore(Episode episode)
         {

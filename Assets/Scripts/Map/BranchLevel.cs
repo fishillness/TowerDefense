@@ -13,7 +13,7 @@ namespace TowerDefense
         public void TryActivate()
         {
             gameObject.SetActive(rootLevel.IsComplete);
-            if (needPoints > MapCompletion.Instance.TotalScore)
+            if (needPoints > MapCompletion.Instance.GetTotalScore())
             {
                 pointsText.text = needPoints.ToString();
             }
