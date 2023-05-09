@@ -25,6 +25,7 @@ namespace TowerDefense
             else
                 Debug.Log($"Episode complete with score {levelScore}");
         }
+
         private void SaveResult(Episode currentEpisode, int levelScore)
         {
             foreach (var item in m_completionDate)
@@ -41,8 +42,7 @@ namespace TowerDefense
         }
 
         [SerializeField] private EpisodeScore[] m_completionDate;
-        //[SerializeField] private EpisodeScore[] m_branchCompletionData;
-        [SerializeField] private int totalScore;
+        private int totalScore;
 
         public int TotalScore => totalScore;
 
@@ -55,8 +55,17 @@ namespace TowerDefense
                 totalScore += episodeScore.m_score;
             }
         }
-
-        public bool TryIndex(int id, out Episode episode, out int score)
+        public int GetEpisodeScore(Episode episode)
+        {
+            foreach (var data in m_completionDate)
+            {
+                if (data.m_episode == episode)
+                    return
+                         data.m_score;
+            }
+            return 0;
+        }
+        /*public bool TryIndex(int id, out Episode episode, out int score)
         {
             if (id >= 0 && id < m_completionDate.Length)
             {
@@ -67,6 +76,6 @@ namespace TowerDefense
             episode = null;
             score = 0;
             return false;
-        }
+        }*/
     }
 }

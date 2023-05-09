@@ -293,6 +293,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level_4
       objectReference: {fileID: 0}
+    - target: {fileID: 4489673193122030745, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
+      propertyPath: m_episode
+      value: 
+      objectReference: {fileID: 11400000, guid: 659670284f774de4a874ec40961937e1, type: 2}
     - target: {fileID: 5117037997202290700, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -604,6 +608,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level_3
       objectReference: {fileID: 0}
+    - target: {fileID: 4489673193122030745, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
+      propertyPath: m_episode
+      value: 
+      objectReference: {fileID: 11400000, guid: 8fbccd9154fc11f418ce5a52a9de914b, type: 2}
     - target: {fileID: 5117037997202290700, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -717,7 +725,10 @@ MonoBehaviour:
     m_score: 0
   - m_episode: {fileID: 11400000, guid: 659670284f774de4a874ec40961937e1, type: 2}
     m_score: 0
-  totalScore: 0
+  - m_episode: {fileID: 11400000, guid: fb8b29aac668ffc4aa65003319bdd504, type: 2}
+    m_score: 0
+  - m_episode: {fileID: 11400000, guid: 6f8f5649a1e650e4fad310046f92bb35, type: 2}
+    m_score: 0
 --- !u!114 &1500555032 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4489673193122030745, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
@@ -744,6 +755,10 @@ PrefabInstance:
       propertyPath: needPoints
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1802416736047867737, guid: 0faa7f3a12bdd7f4f8b06fd4f559f3eb, type: 3}
+      propertyPath: m_episode
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f8f5649a1e650e4fad310046f92bb35, type: 2}
     - target: {fileID: 2995731882139248037, guid: 0faa7f3a12bdd7f4f8b06fd4f559f3eb, type: 3}
       propertyPath: m_Name
       value: Level_2_extra
@@ -821,6 +836,10 @@ PrefabInstance:
       propertyPath: rootLevel
       value: 
       objectReference: {fileID: 935984456}
+    - target: {fileID: 1802416736047867737, guid: 0faa7f3a12bdd7f4f8b06fd4f559f3eb, type: 3}
+      propertyPath: m_episode
+      value: 
+      objectReference: {fileID: 11400000, guid: fb8b29aac668ffc4aa65003319bdd504, type: 2}
     - target: {fileID: 2995731882139248037, guid: 0faa7f3a12bdd7f4f8b06fd4f559f3eb, type: 3}
       propertyPath: m_Name
       value: Level_1_extra
@@ -886,6 +905,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4489673193122030745, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
+      propertyPath: m_episode
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a5bae2b6d536b247ae30f5d82f37b7b, type: 2}
     - target: {fileID: 5117037997202290700, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -1892,7 +1892,7 @@ MonoBehaviour:
     - m_asset: {fileID: 11400000, guid: ea783e2fc093a4c4d98eff8e76160817, type: 2}
       m_count: 1
   m_prepareTime: 5
-  m_nextWave: {fileID: 350923415}
+  m_nextWave: {fileID: 0}
 --- !u!4 &1961518363
 Transform:
   m_ObjectHideFlags: 0
