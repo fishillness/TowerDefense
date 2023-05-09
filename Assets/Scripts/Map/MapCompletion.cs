@@ -17,7 +17,7 @@ namespace TowerDefense
             public Episode m_episode;
             public int m_score;
         }
-        #region Static method
+
         public static void SaveEpisodeResult(int levelScore)
         {
             if (Instance)
@@ -39,13 +39,21 @@ namespace TowerDefense
                 }
             }
         }
-        #endregion
+
         [SerializeField] private EpisodeScore[] m_completionDate;
-        
+        //[SerializeField] private EpisodeScore[] m_branchCompletionData;
+        [SerializeField] private int totalScore;
+
+        public int TotalScore => totalScore;
+
         private new void Awake()
         {
             base.Awake();
             Saver<EpisodeScore[]>.TryLoad(m_filename, ref m_completionDate);
+            foreach (var episodeScore in m_completionDate)
+            {
+                totalScore += episodeScore.m_score;
+            }
         }
 
         public bool TryIndex(int id, out Episode episode, out int score)

@@ -10,6 +10,9 @@ namespace TowerDefense
         [SerializeField] private Sprite m_starOn;
         private Episode m_episode;
 
+        public bool IsComplete => gameObject.activeSelf &&
+            m_resultPanel.gameObject.activeSelf;
+
         public void LoadLevel()
         {            
             LevelSequenceController.Instance.StartEpisode(m_episode);
