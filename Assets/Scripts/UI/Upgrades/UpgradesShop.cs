@@ -11,25 +11,41 @@ namespace TowerDefense
         [SerializeField] private Text m_starsAmountText;
         [SerializeField] private int m_starsAmount;
 
-        [SerializeField] private BuyUpgrade[] upgrades;
+        [SerializeField] private BuyUpgrade[] m_upgrades;
 
         private void Start()
         {
             m_shopPanel.SetActive(false);
             m_openShopnButton.onClick.AddListener(OpenShop);
 
-            m_starsAmount = MapCompletion.Instance.GetTotalScore(); ////&?????????????????/
-            m_starsAmountText.text = m_starsAmount.ToString();
-
-            foreach (var slot in upgrades)
+            foreach (var slot in m_upgrades)
             {
                 slot.Initialize();
+                slot.BuyButton.onClick.AddListener(UpdateStars);
             }
+
+            UpdateStars();
         }
 
         private void OnDestroy()
         {
             m_openShopnButton.onClick.RemoveListener(OpenShop);
+            foreach (var slot in m_upgrades)
+            {
+                slot.BuyButton.onClick.RemoveListener(UpdateStars);
+            }
+        }
+
+        public void UpdateStars()
+        {
+            m_starsAmount = MapCompletion.Instance.GetTotalScore();
+            m_starsAmount -= Upgrades.GetTotalCost();
+            m_starsAmountText.text = m_starsAmount.ToString();
+
+            foreach(var slot in m_upgrades)
+            {
+                slot.CheckCost(m_starsAmount);
+            }
         }
 
         private void OpenShop()

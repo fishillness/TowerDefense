@@ -638,7 +638,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac72c2e18a8dde40a0dd21bf1f60ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_asset: {fileID: 0}
   m_upgradeIcon: {fileID: 2612125330064227931}
+  m_costUI: {fileID: 2612125328570566762}
   m_levelText: {fileID: 2612125329065741464}
   m_upgradeText: {fileID: 5764492152506626876}
   m_costText: {fileID: 2612125330396255311}

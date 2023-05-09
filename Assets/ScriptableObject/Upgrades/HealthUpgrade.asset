@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: HealthUpgrade
   m_EditorClassIdentifier: 
   m_sprite: {fileID: 21300000, guid: ae93735604fc8d04e8159ac66b724f1f, type: 3}
-  m_costByLevel: 03000000
+  m_costByLevel: 030000000400000005000000
   m_upgradeText: The number of lives will increase.

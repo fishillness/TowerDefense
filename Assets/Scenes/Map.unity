@@ -319,17 +319,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5117037997202290700, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
   m_PrefabInstance: {fileID: 859398208}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &234140392 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7274807648135491079, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
-  m_PrefabInstance: {fileID: 2039131510}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ac72c2e18a8dde40a0dd21bf1f60ada, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &234140393 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2612125330186707649, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
@@ -1142,9 +1131,8 @@ MonoBehaviour:
   m_openShopnButton: {fileID: 78708816}
   m_starsAmountText: {fileID: 2048828634}
   m_starsAmount: 0
-  upgrades:
+  m_upgrades:
   - {fileID: 1666616466}
-  - {fileID: 234140392}
 --- !u!1 &1332531635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,7 +1218,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 0
-  m_save: []
+  m_save:
+  - m_asset: {fileID: 11400000, guid: 7785d604e2abbed4ca2920440335767a, type: 2}
+    m_level: 0
+--- !u!1 &1456290294 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2612125328570566762, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
+  m_PrefabInstance: {fileID: 2039131510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1500555032 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4489673193122030745, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
@@ -1387,7 +1382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2018368220
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1547,6 +1542,10 @@ PrefabInstance:
       propertyPath: m_asset
       value: 
       objectReference: {fileID: 11400000, guid: 7785d604e2abbed4ca2920440335767a, type: 2}
+    - target: {fileID: 7274807648135491079, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
+      propertyPath: m_costUI
+      value: 
+      objectReference: {fileID: 1456290294}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
 --- !u!1 &2048828632
@@ -1646,34 +1645,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2018368220}
     m_Modifications:
-    - target: {fileID: 2612125329850825855, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2612125329850825855, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2612125329850825855, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1666616466}
-    - target: {fileID: 2612125329850825855, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2612125329850825855, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Buy
-      objectReference: {fileID: 0}
-    - target: {fileID: 2612125329850825855, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TowerDefense.BuyUpgrade, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2612125329850825855, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: TowerDefense.UpgradeProperties, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 2612125330186707648, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
       propertyPath: m_Name
       value: LiveUpgradesPanel

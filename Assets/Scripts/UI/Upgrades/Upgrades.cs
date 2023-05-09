@@ -38,13 +38,24 @@ namespace TowerDefense
             }
             return 0;
         }
+        public static int GetTotalCost()
+        {
+            int result = 0;
+            foreach (var upgrade in Instance.m_save)
+            {
+                for (int i = 0; i < upgrade.m_level; i++)
+                {
+                    result += upgrade.m_asset.CostByLevel[i];
+                }
+            }
+            return result;
+        }
 
         private new void Awake()
         {
             base.Awake();
             Saver<UpgradeSave[]>.TryLoad(filename, ref m_save);
         }
-
     }
 }
 
