@@ -30,8 +30,12 @@ namespace TowerDefense
         }
         [SerializeField] private int m_gold = 0;
         [SerializeField] private Tower m_towerPrefab;
+
         [SerializeField] private UpgradeProperties m_healthUpgrade;
         [SerializeField] private int m_extraHeartsPerUpgrade;
+
+        [SerializeField] private UpgradeProperties m_goldUpgrade;
+        [SerializeField] private int m_extraGoldPerUpgrade;
         #endregion
 
         public new void Awake()
@@ -39,6 +43,9 @@ namespace TowerDefense
             base.Awake();
             var level = Upgrades.GetUpgradeLevel(m_healthUpgrade);
             ApplyDamage(-level * m_extraHeartsPerUpgrade);
+
+            level = Upgrades.GetUpgradeLevel(m_goldUpgrade);
+            ChangeGold(level * m_extraGoldPerUpgrade);
         }
 
         #region Public API
