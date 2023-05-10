@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using SpaceShooter;
 
@@ -5,7 +6,10 @@ namespace TowerDefense
 {    
     public class TDLevelController : LevelController
     {
+        public static event Action<int> OnLevelCompleted;
+
         private int m_levelScore = 3;
+        
         private new void Start()
         {
             base.Start();
@@ -23,6 +27,7 @@ namespace TowerDefense
                     m_levelScore -= 1;
                 }
                 MapCompletion.SaveEpisodeResult(m_levelScore);
+                OnLevelCompleted?.Invoke(m_levelScore);
             });
 
             void LifeScoreChange(int _)
