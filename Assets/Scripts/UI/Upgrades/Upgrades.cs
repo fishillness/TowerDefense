@@ -5,7 +5,7 @@ namespace TowerDefense
 {
     public class Upgrades : SingletonBase<Upgrades>
     {
-        public const string filename = "upgrades.dat";
+        public const string m_filename = "upgrades.dat";
 
         [Serializable]
         private class UpgradeSave
@@ -22,7 +22,7 @@ namespace TowerDefense
                 if (upgrade.m_asset == asset)
                 {
                     upgrade.m_level += 1;
-                    Saver<UpgradeSave[]>.Save(filename, Instance.m_save);
+                    Saver<UpgradeSave[]>.Save(m_filename, Instance.m_save);
                 }
             }
         }
@@ -54,7 +54,7 @@ namespace TowerDefense
         private new void Awake()
         {
             base.Awake();
-            Saver<UpgradeSave[]>.TryLoad(filename, ref m_save);
+            Saver<UpgradeSave[]>.TryLoad(m_filename, ref m_save);
         }
     }
 }

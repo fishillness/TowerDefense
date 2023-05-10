@@ -21,8 +21,11 @@ namespace TowerDefense
             foreach (var slot in m_upgrades)
             {
                 slot.Initialize();
-                slot.BuyButton.onClick.AddListener(UpdateStars);
+                //slot.BuyButton.onClick.AddListener(UpdateStars);
+              
             }
+
+            BuyUpgrade.OnBuy += UpdateStars;
 
             UpdateStars();
         }
@@ -30,10 +33,11 @@ namespace TowerDefense
         private void OnDestroy()
         {
             m_openShopnButton.onClick.RemoveListener(OpenShop);
-            foreach (var slot in m_upgrades)
+            /*foreach (var slot in m_upgrades)
             {
                 slot.BuyButton.onClick.RemoveListener(UpdateStars);
-            }
+            }*/
+            BuyUpgrade.OnBuy -= UpdateStars;
         }
 
         public void UpdateStars()

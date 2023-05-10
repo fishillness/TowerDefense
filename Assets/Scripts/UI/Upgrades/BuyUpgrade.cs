@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace TowerDefense
 {    public class BuyUpgrade : MonoBehaviour
     {
+        public static event Action OnBuy;
+
         [SerializeField] private UpgradeProperties m_asset;
 
         [SerializeField] private Image m_upgradeIcon;
@@ -56,7 +59,8 @@ namespace TowerDefense
         public void Buy()
         {
             Upgrades.BuyUpgrade(m_asset);
-            Initialize(); 
+            Initialize();
+            OnBuy?.Invoke();
         }
     }
 }
