@@ -15,4 +15,4 @@ MonoBehaviour:
   m_sprite: {fileID: 21300000, guid: 850e1cb495d28564e90f83ba4625952d, type: 3}
   m_costByLevel: 030000000400000005000000
   m_upgradeText: Arrow speed will increase.
-  m_value: 0
+  m_value: 1
