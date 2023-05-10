@@ -45,7 +45,8 @@ namespace TowerDefense
             ApplyDamage(-level * m_extraHeartsPerUpgrade);
 
             level = Upgrades.GetUpgradeLevel(m_goldUpgrade);
-            ChangeGold(level * m_extraGoldPerUpgrade);
+            if (level >= 1)
+                ChangeGold(level * m_extraGoldPerUpgrade);
         }
 
         #region Public API

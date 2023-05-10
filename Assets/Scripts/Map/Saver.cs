@@ -10,6 +10,7 @@ namespace TowerDefense
         public static void TryLoad(string fileName, ref T data)
         {
             var path = FileHandler.Path(fileName);
+            //Debug.Log(path);
 
             if (File.Exists(path))
             {

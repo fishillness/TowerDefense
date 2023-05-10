@@ -91,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Mode: 0
   m_turretProperties: {fileID: 11400000, guid: ec285d440c8894749ba43c1194c60958, type: 2}
+  m_speedProjectileUpgradeProperties: {fileID: 11400000, guid: b0a7e5fa990664241b624bb5aa1caae7, type: 2}
 --- !u!1 &5599019301585172720
 GameObject:
   m_ObjectHideFlags: 0

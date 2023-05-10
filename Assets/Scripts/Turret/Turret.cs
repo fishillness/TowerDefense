@@ -1,4 +1,5 @@
 using UnityEngine;
+using TowerDefense;
 
 namespace SpaceShooter
 {
@@ -16,6 +17,7 @@ namespace SpaceShooter
         /// Ссылка на TurretProperties.
         /// </summary>
         [SerializeField] private TurretProperties m_turretProperties;
+        [SerializeField] private UpgradeProperties m_speedProjectileUpgradeProperties;
         /// <summary>
         /// Re-shot timer.
         /// Таймер повторного выстрела.
@@ -74,6 +76,13 @@ namespace SpaceShooter
             projectile.transform.up = transform.up;
 
             projectile.SetParentShoter(m_Ship);
+
+            if (m_speedProjectileUpgradeProperties)
+            {
+                if (m_turretProperties.TurretType == "Archer")
+                    projectile.ChangeVelocity(Upgrades.GetUpgradeLevel(m_speedProjectileUpgradeProperties) * 
+                        m_speedProjectileUpgradeProperties.Value);
+            }
 
             m_RefireTimer = m_turretProperties.RateOfFire;
             

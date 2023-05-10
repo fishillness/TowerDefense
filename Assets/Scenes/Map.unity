@@ -743,11 +743,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2612125330186707648, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
       propertyPath: m_Name
-      value: UpgradesPanel (1)
+      value: SpeedProjectileUpgradesPanel
       objectReference: {fileID: 0}
     - target: {fileID: 2612125330186707648, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2612125330186707649, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
       propertyPath: m_Pivot.x
@@ -836,21 +836,12 @@ PrefabInstance:
     - target: {fileID: 7274807648135491079, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
       propertyPath: m_asset
       value: 
-      objectReference: {fileID: 11400000, guid: 7785d604e2abbed4ca2920440335767a, type: 2}
-    - target: {fileID: 7274807648135491079, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
-      propertyPath: m_costUI
-      value: 
-      objectReference: {fileID: 797752443}
+      objectReference: {fileID: 11400000, guid: b0a7e5fa990664241b624bb5aa1caae7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
 --- !u!224 &797752442 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2612125330186707649, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
-  m_PrefabInstance: {fileID: 797752441}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &797752443 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2612125328570566762, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
   m_PrefabInstance: {fileID: 797752441}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &802671501 stripped
@@ -1157,6 +1148,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 025256d09ba5c65438e16440cbbdf250, type: 3}
+--- !u!114 &1119100540 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7274807648135491079, guid: d3b3824c54251d94fa7e4167d0403709, type: 3}
+  m_PrefabInstance: {fileID: 797752441}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ac72c2e18a8dde40a0dd21bf1f60ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1206277429
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,6 +1255,7 @@ MonoBehaviour:
   m_upgrades:
   - {fileID: 1666616466}
   - {fileID: 2039131511}
+  - {fileID: 1119100540}
 --- !u!1 &1332531635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,6 +1345,8 @@ MonoBehaviour:
   - m_asset: {fileID: 11400000, guid: 7785d604e2abbed4ca2920440335767a, type: 2}
     m_level: 0
   - m_asset: {fileID: 11400000, guid: 556767caaf8ea814bb465fdcfe9d732f, type: 2}
+    m_level: 0
+  - m_asset: {fileID: 11400000, guid: b0a7e5fa990664241b624bb5aa1caae7, type: 2}
     m_level: 0
 --- !u!1 &1456290294 stripped
 GameObject:

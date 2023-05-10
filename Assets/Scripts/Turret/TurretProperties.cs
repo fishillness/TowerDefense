@@ -17,6 +17,8 @@ namespace SpaceShooter
     [CreateAssetMenu]
     public sealed class TurretProperties : ScriptableObject
     {
+        [SerializeField] private string m_turretType;
+        public string TurretType => m_turretType;
         /// <summary>
         /// Turret type.
         /// Вид турели.

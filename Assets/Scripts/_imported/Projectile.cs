@@ -97,6 +97,11 @@ namespace SpaceShooter
         {
             m_Parent = parent;
         }
+
+        public void ChangeVelocity(float value)
+        {
+            m_Velocity += value;
+        }
         #endregion
     }
 
