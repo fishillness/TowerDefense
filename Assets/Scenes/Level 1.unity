@@ -482,12 +482,10 @@ MonoBehaviour:
   m_NumLives: 10
   m_Ship: {fileID: 0}
   m_PlayerShipPrefab: {fileID: 0}
-  m_gold: 1000
+  m_gold: 100
   m_towerPrefab: {fileID: 5599019301281930403, guid: 23143df3628056042ac283c0f11ccf47, type: 3}
   m_healthUpgrade: {fileID: 11400000, guid: 7785d604e2abbed4ca2920440335767a, type: 2}
-  m_extraHeartsPerUpgrade: 5
   m_goldUpgrade: {fileID: 11400000, guid: 556767caaf8ea814bb465fdcfe9d732f, type: 2}
-  m_extraGoldPerUpgrade: 10
 --- !u!114 &314074038
 MonoBehaviour:
   m_ObjectHideFlags: 0
