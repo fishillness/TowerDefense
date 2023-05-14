@@ -22,6 +22,9 @@ namespace TowerDefense
         [SerializeField] private int m_hitpoint = 1;
         public int HitPoint => m_hitpoint;
 
+        [SerializeField] private int m_armor = 0;
+        public int Armor => m_armor;
+
         [SerializeField] private int m_score = 1;
         public int Score => m_score;
 

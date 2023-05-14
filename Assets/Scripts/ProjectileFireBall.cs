@@ -5,9 +5,10 @@ namespace TowerDefense
 {
     public class ProjectileFireBall : Projectile
     {
-        protected override void HitObject(Destructible dest)
+        protected override void HitObject(Enemy enemy)
         {
-            var enemy = dest.GetComponent<Enemy>();
+            var dest = enemy.transform.root.GetComponent<Destructible>();
+            //var enemy = dest.GetComponent<Enemy>();
             if (enemy != null && !enemy.IsInvulnerableOfFire)
             {
                 dest.ApplyDamage(m_Damage);
@@ -16,19 +17,6 @@ namespace TowerDefense
                 if (fire)
                 {
                     fire.SetFireActive(dest);
-                }
-                
-                if (Player.Instance != null && dest.HitPoints < 0)
-                {
-                    if (m_Parent == Player.Instance.ActiveShip)
-                    {
-                        Player.Instance.AddScore(dest.ScoreValue);
-                            /*if (dest.HitPoints <= 0 && dest.GetComponent<SpaceShip>() != null &&
-                                dest.TeamId != Player.Instance.ActiveShip.TeamId) //
-                            {
-                                Player.Instance.AddKill();
-                            }*/
-                    }
                 }
             }            
         }

@@ -6,17 +6,26 @@ using UnityEngine.UIElements;
 
 namespace TowerDefense
 {
+    [RequireComponent(typeof(Destructible))]
     [RequireComponent(typeof(TDPatrolController))]
     public class Enemy : MonoBehaviour
     {
         #region Properties
         [SerializeField] private int m_damage;
         [SerializeField] private int m_gold;
+        [SerializeField] private int m_armor;
         [SerializeField] private bool invulnerabilityOfFire;
         public bool IsInvulnerableOfFire => invulnerabilityOfFire;
 
         public event Action OnEnd;
+
+        private Destructible m_destructible;
+
         #endregion
+        private void Awake()
+        {
+            m_destructible = GetComponent<Destructible>();
+        }
         private void OnDestroy() { OnEnd?.Invoke(); }
         #region Public API
         public void Use(EnemyAsset asset)
@@ -32,6 +41,7 @@ namespace TowerDefense
 
             m_damage = asset.Damage;
             m_gold = asset.Gold;
+            m_armor = asset.Armor;
 
             invulnerabilityOfFire = asset.IsInvulnerableOfFire;
         }
@@ -44,6 +54,11 @@ namespace TowerDefense
         public void GivePlayerGold()
         {
             TDPlayer.Instance.ChangeGold(m_gold);
+        }
+
+        public void TakeDamage(int damage)
+        {
+            m_destructible.ApplyDamage(Mathf.Max(1, damage - m_armor));
         }
         #endregion
     }

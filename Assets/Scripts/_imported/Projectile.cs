@@ -1,4 +1,5 @@
 using UnityEngine;
+using TowerDefense;
 
 namespace SpaceShooter
 {
@@ -45,12 +46,7 @@ namespace SpaceShooter
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, stepLength);
             if (hit)
             {
-                Destructible dest = hit.collider.transform.root.GetComponent<Destructible>();
-
-                if (dest != null && dest != m_Parent)
-                {
-                    HitObject(dest);
-                }
+                OnHit(hit);
                 OnProjectileLifeEnd(hit.collider, hit.point);
             }
 
@@ -59,6 +55,29 @@ namespace SpaceShooter
                 Destroy(gameObject);
 
             transform.position += new Vector3(step.x, step.y, 0);
+        }
+
+        private void OnHit(RaycastHit2D hit)
+        {
+            Enemy enemy = hit.collider.transform.root.GetComponent<Enemy>();
+
+            if (enemy != null)
+            {
+                HitObject(enemy);
+            }
+        }
+        protected virtual void HitObject(Enemy enemy)
+        {
+            enemy.TakeDamage(m_Damage);
+        }
+        /*private void OnHit(RaycastHit2D hit)
+        {
+            Destructible dest = hit.collider.transform.root.GetComponent<Destructible>();
+
+            if (dest != null && dest != m_Parent)
+            {
+                HitObject(dest);
+            }
         }
 
         protected virtual void HitObject(Destructible dest)
@@ -70,15 +89,10 @@ namespace SpaceShooter
                 if (m_Parent == Player.Instance.ActiveShip)
                 {
                     Player.Instance.AddScore(dest.ScoreValue);
-                    /*if (dest.HitPoints <= 0 && dest.GetComponent<SpaceShip>() != null &&
-                        dest.TeamId != Player.Instance.ActiveShip.TeamId) //
-                    {
-                        Player.Instance.AddKill();
-                    }*/
                 }
             }
 
-        }
+        }*/
 
         /*private void OnShipDeath()
         {

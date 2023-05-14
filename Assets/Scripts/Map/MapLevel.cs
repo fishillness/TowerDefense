@@ -20,7 +20,7 @@ namespace TowerDefense
             LevelSequenceController.Instance.StartEpisode(m_episode);
         }
 
-        public void Initialise()
+        public int Initialise()
         {
             var score = MapCompletion.Instance.GetEpisodeScore(m_episode);
             m_resultPanel.gameObject.SetActive(score > 0);
@@ -28,6 +28,7 @@ namespace TowerDefense
             {
                 m_resultImages[i].sprite = m_starOn;
             }
+            return score;
         }
 
         /*public void SetLevelDate(Episode episode, int score)
