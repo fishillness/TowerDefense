@@ -6,16 +6,46 @@ using UnityEngine.UIElements;
 
 namespace TowerDefense
 {
+    public enum ArmorType
+    {
+        Base = 0,
+        MagicFire = 1
+    }
+
     [RequireComponent(typeof(Destructible))]
     [RequireComponent(typeof(TDPatrolController))]
     public class Enemy : MonoBehaviour
     {
+        private static Func<int, DamageType, int, int>[] ArmorDamageFunctions =
+        {
+            //ArmorType.Base
+            (int damage, DamageType type, int armor) =>
+            {
+                switch (type)
+                {
+                    case DamageType.MagicFire:
+                        return damage;
+                    default: 
+                        return Mathf.Max(damage - armor, 1);
+                }
+            },
+            //ArmorType.MagicFire
+            (int damage, DamageType type, int armor) => 
+            {
+                if (type == DamageType.Base)
+                     armor = armor / 2;
+                
+                return Mathf.Max(damage - armor, 1);
+            }
+        };
+
         #region Properties
         [SerializeField] private int m_damage;
         [SerializeField] private int m_gold;
         [SerializeField] private int m_armor;
         [SerializeField] private bool invulnerabilityOfFire;
         public bool IsInvulnerableOfFire => invulnerabilityOfFire;
+        [SerializeField] private ArmorType m_armorType;
 
         public event Action OnEnd;
 
@@ -42,6 +72,7 @@ namespace TowerDefense
             m_damage = asset.Damage;
             m_gold = asset.Gold;
             m_armor = asset.Armor;
+            m_armorType = asset.ArmorType;
 
             invulnerabilityOfFire = asset.IsInvulnerableOfFire;
         }
@@ -56,9 +87,11 @@ namespace TowerDefense
             TDPlayer.Instance.ChangeGold(m_gold);
         }
 
-        public void TakeDamage(int damage)
+        public void TakeDamage(int damage, DamageType damageType)
         {
-            m_destructible.ApplyDamage(Mathf.Max(1, damage - m_armor));
+            m_destructible.ApplyDamage(ArmorDamageFunctions[(int) m_armorType](damage, damageType, m_armor));
+
+            //m_destructible.ApplyDamage(Mathf.Max(1, damage - m_armor));
         }
         #endregion
     }

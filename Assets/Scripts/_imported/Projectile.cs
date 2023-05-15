@@ -57,30 +57,26 @@ namespace SpaceShooter
             transform.position += new Vector3(step.x, step.y, 0);
         }
 
-        private void OnHit(RaycastHit2D hit)
-        {
-            Enemy enemy = hit.collider.transform.root.GetComponent<Enemy>();
-
-            if (enemy != null)
-            {
-                HitObject(enemy);
-            }
-        }
-        protected virtual void HitObject(Enemy enemy)
-        {
-            enemy.TakeDamage(m_Damage);
-        }
-        /*private void OnHit(RaycastHit2D hit)
+        protected virtual void OnHit(RaycastHit2D hit)
         {
             Destructible dest = hit.collider.transform.root.GetComponent<Destructible>();
 
             if (dest != null && dest != m_Parent)
             {
-                HitObject(dest);
+                //HitObject(dest);
+                dest.ApplyDamage(m_Damage);
+
+                if (Player.Instance != null && dest.HitPoints < 0)
+                {
+                    if (m_Parent == Player.Instance.ActiveShip)
+                    {
+                        Player.Instance.AddScore(dest.ScoreValue);
+                    }
+                }
             }
         }
 
-        protected virtual void HitObject(Destructible dest)
+        /*protected virtual void HitObject(Destructible dest)
         {
             dest.ApplyDamage(m_Damage);
 

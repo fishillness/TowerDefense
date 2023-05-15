@@ -39,5 +39,8 @@ namespace TowerDefense
 
         [SerializeField] private bool m_invulnerabilityOfFire;
         public bool IsInvulnerableOfFire => m_invulnerabilityOfFire;
+
+        [SerializeField] private ArmorType m_armorType;
+        public ArmorType ArmorType => m_armorType;
     }
 }

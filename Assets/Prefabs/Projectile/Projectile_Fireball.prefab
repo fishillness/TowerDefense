@@ -149,5 +149,6 @@ MonoBehaviour:
   m_Nickname: 
   m_Velocity: 5
   m_Lifetime: 1
-  m_Damage: 1
+  m_Damage: 6
   m_impactEffectPrefab: {fileID: 0}
+  m_DamageType: 1

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6669994776675787665}
-  - component: {fileID: 6669994776675787664}
+  - component: {fileID: -6855155572665308037}
   m_Layer: 0
   m_Name: Projectile_Spear
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6669994776675787664
+--- !u!114 &-6855155572665308037
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6669994776675787671}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c32a1fa93006e42449aa5c39e1adb30b, type: 3}
+  m_Script: {fileID: 11500000, guid: ed9a7eb1196914c4888cef7bad846598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Nickname: 

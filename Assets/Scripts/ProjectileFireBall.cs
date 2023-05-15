@@ -3,12 +3,32 @@ using SpaceShooter;
 
 namespace TowerDefense
 {
-    public class ProjectileFireBall : Projectile
+    public class ProjectileFireBall : TDProjectile
     {
-        protected override void HitObject(Enemy enemy)
+        protected override void OnHit(RaycastHit2D hit)
         {
-            var dest = enemy.transform.root.GetComponent<Destructible>();
-            //var enemy = dest.GetComponent<Enemy>();
+            Enemy enemy = hit.collider.transform.root.GetComponent<Enemy>();
+
+            if (enemy != null)// && !enemy.IsInvulnerableOfFire)
+            {
+                enemy.TakeDamage(m_Damage, m_DamageType);
+
+                if (!enemy.IsInvulnerableOfFire)
+                {
+                    var dest = enemy.transform.root.GetComponent<Destructible>();
+                    var fire = dest.GetComponentInChildren<Fire>();
+                    if (fire)
+                    {
+                        fire.SetFireActive(dest);
+                    }
+                }                
+            }
+        }
+
+        /*protected override void HitObject(Destructible dest)//(Enemy enemy)
+        {
+            //var dest = enemy.transform.root.GetComponent<Destructible>();
+            var enemy = dest.GetComponent<Enemy>();
             if (enemy != null && !enemy.IsInvulnerableOfFire)
             {
                 dest.ApplyDamage(m_Damage);
@@ -19,7 +39,7 @@ namespace TowerDefense
                     fire.SetFireActive(dest);
                 }
             }            
-        }
+        }*/
     }
 }
 
