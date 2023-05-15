@@ -18,12 +18,18 @@ namespace TowerDefense
             public int m_score;
         }
 
+        [SerializeField] private EpisodeScore[] m_completionDate;
         public static void SaveEpisodeResult(int levelScore)
         {
             if (Instance)
                 Instance.SaveResult(LevelSequenceController.Instance.CurrentEpisode, levelScore);
             else
                 Debug.Log($"Episode complete with score {levelScore}");
+        }
+        private new void Awake()
+        {
+            base.Awake();
+            Saver<EpisodeScore[]>.TryLoad(m_filename, ref m_completionDate);
         }
 
         private void SaveResult(Episode currentEpisode, int levelScore)
@@ -41,19 +47,6 @@ namespace TowerDefense
             }
         }
 
-        [SerializeField] private EpisodeScore[] m_completionDate;
-        //private int totalScore;
-       // public int TotalScore => totalScore;
-
-        private new void Awake()
-        {
-            base.Awake();
-            Saver<EpisodeScore[]>.TryLoad(m_filename, ref m_completionDate);
-            /*foreach (var episodeScore in m_completionDate)
-            {
-                totalScore += episodeScore.m_score;
-            }*/
-        }
         public int GetTotalScore()
         {
             var totalscore = 0;

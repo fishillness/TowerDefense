@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_turretType: Archer
   m_Mode: 2
-  m_ProjectilePrefab: {fileID: 1329345485624720344, guid: e79e16715a879154aa863a538d79595b, type: 3}
+  m_ProjectilePrefab: {fileID: 3464986384792839193, guid: e79e16715a879154aa863a538d79595b, type: 3}
   m_RateOfFire: 0.5
   m_EnergyUsage: 0
   m_AmmoUsage: 0
