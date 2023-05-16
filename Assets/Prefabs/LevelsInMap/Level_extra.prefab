@@ -575,6 +575,7 @@ MonoBehaviour:
   - {fileID: 7222112932961717356}
   - {fileID: 2943646974150827350}
   m_starOn: {fileID: -6859001260349468157, guid: c21ae2e058cdc6f4eaa592c5df3ddd65, type: 3}
+  m_episode: {fileID: 0}
 --- !u!114 &250321953051636267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,9 +588,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4675de39c821ef049b109d6ea9aaee55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rootLevel: {fileID: 0}
-  pointsText: {fileID: 1383813783}
-  needPoints: 3
+  m_rootLevel: {fileID: 0}
+  m_pointsText: {fileID: 1383813783}
+  m_needPoints: 3
 --- !u!1 &3220360466780636575
 GameObject:
   m_ObjectHideFlags: 0

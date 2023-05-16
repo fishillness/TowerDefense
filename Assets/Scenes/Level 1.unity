@@ -1866,6 +1866,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3072070502504292130, guid: 987816ee40ef52a4ba7767d6f60be665, type: 3}
+      propertyPath: m_mageTowerUpgrade
+      value: 
+      objectReference: {fileID: 11400000, guid: 7761129aec9a92b41bea12ff8ec2328c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 987816ee40ef52a4ba7767d6f60be665, type: 3}
 --- !u!1001 &3575592148380333114
@@ -1878,6 +1882,10 @@ PrefabInstance:
     - target: {fileID: 3575592148136548233, guid: 6363610ffee295a4ea1a807f5738a854, type: 3}
       propertyPath: m_Name
       value: PlayerCamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3575592148136548237, guid: 6363610ffee295a4ea1a807f5738a854, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3575592148136548238, guid: 6363610ffee295a4ea1a807f5738a854, type: 3}
       propertyPath: m_RootOrder

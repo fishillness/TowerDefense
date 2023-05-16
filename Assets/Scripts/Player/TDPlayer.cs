@@ -38,6 +38,16 @@ namespace TowerDefense
         //[SerializeField] private int m_extraGoldPerUpgrade;
         #endregion
 
+        public void Start()
+        {
+            var level = Upgrades.GetUpgradeLevel(m_healthUpgrade);
+            ApplyDamage(-level * (int) m_healthUpgrade.Value);// m_extraHeartsPerUpgrade);
+
+            level = Upgrades.GetUpgradeLevel(m_goldUpgrade);
+            if (level >= 1)
+                ChangeGold(level * (int) m_goldUpgrade.Value);// m_extraGoldPerUpgrade);
+        }
+        /*
         public new void Awake()
         {
             base.Awake();
@@ -48,6 +58,7 @@ namespace TowerDefense
             if (level >= 1)
                 ChangeGold(level * (int) m_goldUpgrade.Value);// m_extraGoldPerUpgrade);
         }
+        */
 
         #region Public API
         public void ChangeGold(int change)

@@ -65,3 +65,5 @@ MonoBehaviour:
     m_level: 0
   - m_asset: {fileID: 11400000, guid: b0a7e5fa990664241b624bb5aa1caae7, type: 2}
     m_level: 0
+  - m_asset: {fileID: 11400000, guid: 7761129aec9a92b41bea12ff8ec2328c, type: 2}
+    m_level: 0

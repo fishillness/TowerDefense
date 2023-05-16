@@ -7,6 +7,7 @@ namespace TowerDefense
     {
         #region Properties
         [SerializeField] private TowerAsset m_towerAsset;
+        public void SetTowerAsset(TowerAsset asset) { m_towerAsset = asset; }
         [SerializeField] private Text m_text;
         [SerializeField] private Button m_button;
         [SerializeField] private Transform m_buildSite;
