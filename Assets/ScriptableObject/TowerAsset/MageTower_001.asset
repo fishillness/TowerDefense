@@ -18,3 +18,5 @@ MonoBehaviour:
   m_turretProperties: {fileID: 11400000, guid: 3bc15395a9d3ed743b52299e80e5ec92, type: 2}
   m_requiredUpgrade: {fileID: 11400000, guid: 7761129aec9a92b41bea12ff8ec2328c, type: 2}
   m_requiredUpgradeLevel: 1
+  m_upgradesTo:
+  - {fileID: 11400000, guid: 93a4c53f227f1e64f990645e915d0a88, type: 2}

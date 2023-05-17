@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: MageTower_001_UpgradedToLvl2
   m_EditorClassIdentifier: 
   m_goldCost: 30
-  m_sprite: {fileID: 21300000, guid: 298636722737c4b41816506cd4bc994f, type: 3}
+  m_sprite: {fileID: 21300000, guid: 09143938c6ccdce4a8a2d811556bd038, type: 3}
   m_spriteGUI: {fileID: 21300000, guid: 1ff55c4a74fcf9b429b49b787ead3395, type: 3}
-  m_turretProperties: {fileID: 11400000, guid: 3bc15395a9d3ed743b52299e80e5ec92, type: 2}
+  m_turretProperties: {fileID: 11400000, guid: 213df581cf762f145ae7fdbaaf4e8f39, type: 2}
   m_requiredUpgrade: {fileID: 11400000, guid: 7761129aec9a92b41bea12ff8ec2328c, type: 2}
-  m_requiredUpgradeLevel: 2
+  m_requiredUpgradeLevel: 0
   m_upgradesTo: []
