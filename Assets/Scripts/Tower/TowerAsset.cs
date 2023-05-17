@@ -17,5 +17,17 @@ namespace TowerDefense
 
         [SerializeField] private TurretProperties m_turretProperties;
         public TurretProperties TurretProperties => m_turretProperties;
+
+        [Header("Upgrade")]
+        [SerializeField] private UpgradeProperties m_requiredUpgrade;
+        public UpgradeProperties RequiredUpgrade => m_requiredUpgrade;
+
+        [SerializeField] private int m_requiredUpgradeLevel;
+        public int RequiredUpgradeLevel => m_requiredUpgradeLevel;
+        public bool IsAvailable() => !m_requiredUpgrade || 
+            m_requiredUpgradeLevel <= Upgrades.GetUpgradeLevel(m_requiredUpgrade);
+
+        [SerializeField] private TowerAsset[] m_upgradesTo;
+        public TowerAsset[] UpgradesTo => m_upgradesTo;    
     }
 }

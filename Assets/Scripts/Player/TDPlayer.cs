@@ -82,7 +82,8 @@ namespace TowerDefense
             {
                 tower.GetComponentInChildren<Turret>().SetTurretProperties(towerAsset.TurretProperties);
             }
-           
+            tower.GetComponentInChildren<BuildSite>().SetBuildableTowers(towerAsset.UpgradesTo);
+
             Destroy(buildSite.gameObject);
         }
         #endregion

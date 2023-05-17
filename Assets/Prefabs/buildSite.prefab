@@ -88,6 +88,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b93de7f04373046a3413feb14d40f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_buildableTowers:
+  - {fileID: 11400000, guid: dadc240e175e8cb4a87e747ad8428f7b, type: 2}
+  - {fileID: 11400000, guid: 2df03eee93f70ef44b31dc1f64c3d1b7, type: 2}
+  - {fileID: 11400000, guid: 3150625dae7df724ab3866eb4eda45ac, type: 2}
 --- !u!1 &1330838059
 GameObject:
   m_ObjectHideFlags: 0
