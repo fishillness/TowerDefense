@@ -5,6 +5,8 @@ namespace TowerDefense
 {
     public class EnemyWaveManager : MonoBehaviour
     {
+        public static event Action<Enemy> OnEnemySpawn;
+
         [SerializeField] private Enemy m_EnemyPrefabs;
         [SerializeField] private Path[] m_paths;
         [SerializeField] private EnemyWave m_currentWave;
@@ -54,6 +56,7 @@ namespace TowerDefense
                         e.Use(asset);
                         e.GetComponent<TDPatrolController>().SetPath(m_paths[pathIndex]);
                         m_activeEnemyCount += 1;
+                        OnEnemySpawn?.Invoke(e);
                     }
                 }
                 else

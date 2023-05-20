@@ -35,6 +35,18 @@ namespace SpaceShooter
         [SerializeField] private float m_MaxLinearVelocity;
         public float MaxLinearVelocity => m_MaxLinearVelocity;
 
+        #region Changes Linear Velocity
+        private float m_MaxLinearVelocityBackup;
+        public void HalfMaxLinearVelocity() 
+        { 
+            m_MaxLinearVelocityBackup = m_MaxLinearVelocity; 
+            m_MaxLinearVelocity /= 2; 
+        }
+        public void RestoreMaxLinearVelocity() 
+        { 
+            m_MaxLinearVelocity = m_MaxLinearVelocityBackup; 
+        }
+        #endregion
         /// <summary>
         /// Maximum rotational speed. In degrees/sec
         /// Максимальная вращательная скорость. В градусах/сек
