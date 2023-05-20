@@ -57,12 +57,15 @@ namespace TowerDefense
             }
             else
             {
-                foreach (var control in m_activeControls)
+                if (m_activeControls != null)
                 {
-                    if (control)
-                        Destroy(control.gameObject);
-                }
-                m_activeControls.Clear();
+                    foreach (var control in m_activeControls)
+                    {
+                        if (control)
+                            Destroy(control.gameObject);
+                    }
+                    m_activeControls.Clear();
+                }                
                 gameObject.SetActive(false);
             }
         }
