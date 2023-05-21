@@ -58,8 +58,9 @@ namespace TowerDefense
         [SerializeField] private UpgradeProperties m_goldUpgrade;
         //[SerializeField] private int m_extraGoldPerUpgrade;
 
-
         private Timer m_recoveryManaTimer;
+
+        public int CurrentMana => m_currentMana;
         #endregion
 
         public void Start()
