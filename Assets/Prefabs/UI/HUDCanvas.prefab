@@ -546,11 +546,11 @@ MonoBehaviour:
     m_damage: 2
     m_damageType: 1
     m_radius: 5
-    m_targetingColor: {r: 0, g: 0, b: 0, a: 0}
   m_TimeAbility:
     m_cost: 10
     m_cooldown: 15
     m_duration: 5
+    m_enemyPaintColor: {r: 0.38113207, g: 0.8988987, b: 1, a: 1}
 --- !u!1 &1455450506
 GameObject:
   m_ObjectHideFlags: 0

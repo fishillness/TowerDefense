@@ -16,7 +16,7 @@ namespace TowerDefense
             [SerializeField] private int m_damage = 5;
             [SerializeField] private DamageType m_damageType = DamageType.MagicFire;
             [SerializeField] private int m_radius = 2;
-            [SerializeField] private Color m_targetingColor;
+
             public void Use() 
             {
                 ClickProtection.Instance.Activate((Vector2 v) =>
@@ -42,15 +42,20 @@ namespace TowerDefense
             [SerializeField] private int m_cost = 10;
             [SerializeField] private float m_cooldown = 15f;
             [SerializeField] private float m_duration = 5f;
+            [SerializeField] private Color m_enemyPaintColor;
             public void Use()
             {
                 void Slow(Enemy enemy)
                 {
                     enemy.GetComponent<SpaceShip>().HalfMaxLinearVelocity();
+                    enemy.GetComponentInChildren<SpriteRenderer>().color = m_enemyPaintColor;
                 }
 
                 foreach (var ship in FindObjectsOfType<SpaceShip>())
+                {
                     ship.HalfMaxLinearVelocity();
+                    ship.GetComponentInChildren<SpriteRenderer>().color = m_enemyPaintColor;
+                }
 
                 EnemyWaveManager.OnEnemySpawn += Slow;
 
@@ -59,7 +64,10 @@ namespace TowerDefense
                     yield return new WaitForSeconds(m_duration);
 
                     foreach (var ship in FindObjectsOfType<SpaceShip>())
+                    {
                         ship.RestoreMaxLinearVelocity();
+                        ship.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                    }
 
                     EnemyWaveManager.OnEnemySpawn -= Slow;
                 }

@@ -1755,11 +1755,6 @@ Transform:
   m_Father: {fileID: 1460162550}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &2058306929 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5973473460676365644, guid: d9a64601c4b46a8459881d6b83d6ee33, type: 3}
-  m_PrefabInstance: {fileID: 5973473461039384637}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3072070500897734302
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1767,18 +1762,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3072070500579891670, guid: 987816ee40ef52a4ba7767d6f60be665, type: 3}
-      propertyPath: m_buildSite
-      value: 
-      objectReference: {fileID: 2058306929}
-    - target: {fileID: 3072070500791268907, guid: 987816ee40ef52a4ba7767d6f60be665, type: 3}
-      propertyPath: m_buildSite
-      value: 
-      objectReference: {fileID: 2058306929}
-    - target: {fileID: 3072070500983794077, guid: 987816ee40ef52a4ba7767d6f60be665, type: 3}
-      propertyPath: m_buildSite
-      value: 
-      objectReference: {fileID: 2058306929}
     - target: {fileID: 3072070501774639363, guid: 987816ee40ef52a4ba7767d6f60be665, type: 3}
       propertyPath: m_Name
       value: HUDCanvas
