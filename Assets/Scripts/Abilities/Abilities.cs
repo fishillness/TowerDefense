@@ -15,7 +15,7 @@ namespace TowerDefense
             [SerializeField] private int m_cost = 5;
             [SerializeField] private int m_damage = 5;
             [SerializeField] private DamageType m_damageType = DamageType.MagicFire;
-            [SerializeField] private int m_radius = 5;
+            [SerializeField] private int m_radius = 2;
             [SerializeField] private Color m_targetingColor;
             public void Use() 
             {
@@ -33,9 +33,7 @@ namespace TowerDefense
                             enemy.TakeDamage(m_damage, m_damageType);
                         }
                     }                
-                });
-                
-
+                });  
             }
         }
         [Serializable]
@@ -79,8 +77,6 @@ namespace TowerDefense
             }
         }
         [SerializeField] private Button m_timeButton;
-        [SerializeField] private Image m_targetingCircle;
-        //[SerializeField] private GameObject m_clickProtection;
 
         [SerializeField] private FireAbility m_FireAbility;
         public void UseFireAbility() => m_FireAbility.Use();
