@@ -8,6 +8,8 @@ namespace TowerDefense
     {
         #region Properties
         public static new TDPlayer Instance => Player.Instance as TDPlayer;
+
+        #region Actions
         private static event Action<int> OnGoldUpdate;
         public static void GoldUpdateSubscribe(Action<int> act)
         {
@@ -28,14 +30,36 @@ namespace TowerDefense
         {
             OnLifeUpdate -= act;
         }
-        [SerializeField] private int m_gold = 0;
+        public static event Action<int> OnManaUpdate;
+        public static void ManaUpdateSubscribe(Action<int> act)
+        {
+            OnManaUpdate += act;
+            act(Instance.m_currentMana);
+        }
+        public static void ManaUpdateUnsubscribe(Action<int> act)
+        {
+            OnManaUpdate -= act;
+        }
+        #endregion
+
+        [SerializeField] private int m_gold;
         [SerializeField] private Tower m_towerPrefab;
 
+        [Header("Mana")]
+        [SerializeField] private int m_currentMana;
+        [SerializeField] private int m_maxMana;
+        [SerializeField] private float m_recoveryManaTime;
+        [SerializeField] private int m_stepRecoveryMana;
+
+        [Header("Upgrades")]
         [SerializeField] private UpgradeProperties m_healthUpgrade;
         //[SerializeField] private int m_extraHeartsPerUpgrade;
 
         [SerializeField] private UpgradeProperties m_goldUpgrade;
         //[SerializeField] private int m_extraGoldPerUpgrade;
+
+
+        private Timer m_recoveryManaTimer;
         #endregion
 
         public void Start()
@@ -46,6 +70,8 @@ namespace TowerDefense
             level = Upgrades.GetUpgradeLevel(m_goldUpgrade);
             if (level >= 1)
                 ChangeGold(level * (int) m_goldUpgrade.Value);// m_extraGoldPerUpgrade);
+
+            InitTimers();
         }
         /*
         public new void Awake()
@@ -59,6 +85,16 @@ namespace TowerDefense
                 ChangeGold(level * (int) m_goldUpgrade.Value);// m_extraGoldPerUpgrade);
         }
         */
+        private void Update()
+        {
+            UpdateTimers();
+
+            if (m_recoveryManaTimer.IsFinished)
+            {
+                ChangeMana(m_stepRecoveryMana);
+                m_recoveryManaTimer.Start(m_recoveryManaTime);
+            }
+        }
 
         #region Public API
         public void ChangeGold(int change)
@@ -70,6 +106,16 @@ namespace TowerDefense
         {
             ApplyDamage(change);
             OnLifeUpdate(NumLives);
+        }
+
+        public void ChangeMana(int change)
+        {
+            m_currentMana += change;
+
+            if (m_currentMana >= m_maxMana)
+                m_currentMana = m_maxMana;
+
+            OnManaUpdate(m_currentMana);
         }
 
         public void TryBuild(TowerAsset towerAsset, Transform buildSite)
@@ -85,6 +131,18 @@ namespace TowerDefense
             tower.GetComponentInChildren<BuildSite>().SetBuildableTowers(towerAsset.UpgradesTo);
 
             Destroy(buildSite.gameObject);
+        }
+        #endregion
+
+        #region Timers
+        private void InitTimers()
+        {
+            m_recoveryManaTimer = new Timer(m_recoveryManaTime);
+        }
+
+        private void UpdateTimers()
+        {
+            m_recoveryManaTimer.RemoveTime(Time.deltaTime);
         }
         #endregion
     }

@@ -8,7 +8,8 @@ namespace TowerDefense
         public enum UpdateSource
         {
             Gold,
-            Life
+            Life,
+            Mana
         }
         [SerializeField] private UpdateSource source;
         private Text m_text;
@@ -24,6 +25,9 @@ namespace TowerDefense
                 case UpdateSource.Life:
                     TDPlayer.LifeUpdateSubscribe(UpdateText);
                     break;
+                case UpdateSource.Mana:
+                    TDPlayer.ManaUpdateSubscribe(UpdateText);
+                    break;
             }            
         }
         private void OnDestroy()
@@ -35,6 +39,9 @@ namespace TowerDefense
                     break;
                 case UpdateSource.Life:
                     TDPlayer.LifeUpdateUnsubscribe(UpdateText);
+                    break;
+                case UpdateSource.Mana:
+                    TDPlayer.ManaUpdateUnsubscribe(UpdateText);
                     break;
             }
         }
