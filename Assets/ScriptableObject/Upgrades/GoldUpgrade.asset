@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_sprite: {fileID: 21300000, guid: 5a83b02128c244a4581aad0e216c22a6, type: 3}
   m_costByLevel: 030000000400000005000000
-  m_upgradeText: You will receive additional gold on each level.
+  m_upgradeTextByLevel:
+  - You will receive additional gold on each level.
   m_value: 10

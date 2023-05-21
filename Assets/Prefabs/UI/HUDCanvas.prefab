@@ -545,15 +545,9 @@ MonoBehaviour:
   m_fireAbilityText: {fileID: 8327960402205349330}
   m_timeAbilityText: {fileID: 1823559851565453346}
   m_FireAbility:
-    m_manaCost: 5
-    m_damage: 2
-    m_damageType: 1
-    m_radius: 5
+    m_fireProperties: {fileID: 11400000, guid: 03ce254af0b0a334680fd4e6e6e9267b, type: 2}
   m_TimeAbility:
-    m_manaCost: 10
-    m_cooldown: 15
-    m_duration: 5
-    m_enemyPaintColor: {r: 0.38113207, g: 0.8988987, b: 1, a: 1}
+    m_timePropteries: {fileID: 11400000, guid: 09237105a8f91144b8cb211e1ec0ee8c, type: 2}
 --- !u!1 &1455450506
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,7 +34,11 @@ namespace TowerDefense
         {
             var savedLevel = Upgrades.GetUpgradeLevel(m_asset);
             m_upgradeIcon.sprite = m_asset.Sprite;
-            m_upgradeText.text = m_asset.UpgradeText;
+
+            if (savedLevel < m_asset.UpgradeTextByLevel.Length)
+                m_upgradeText.text = m_asset.UpgradeTextByLevel[savedLevel];
+            else
+                m_upgradeText.text = m_asset.UpgradeTextByLevel[m_asset.UpgradeTextByLevel.Length - 1];
 
             if (savedLevel >= m_asset.CostByLevel.Length)
             {

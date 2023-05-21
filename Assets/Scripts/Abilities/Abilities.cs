@@ -12,11 +12,14 @@ namespace TowerDefense
         [Serializable]
         public class FireAbility
         {
-            [SerializeField] private int m_manaCost = 5;
-            [SerializeField] private int m_damage = 5;
-            [SerializeField] private DamageType m_damageType = DamageType.MagicFire;
-            [SerializeField] private int m_radius = 2;
+            [SerializeField] private FireAbilitiesProperties m_fireProperties;
 
+            private int m_manaCost = 5;
+            private int m_damage = 5;
+            private DamageType m_damageType = DamageType.MagicFire;
+            private int m_radius = 2;
+
+            public FireAbilitiesProperties FireProperties => m_fireProperties;
             public int ManaCost => m_manaCost;
 
             public void Use()
@@ -39,15 +42,26 @@ namespace TowerDefense
                     }
                 });
             }
+
+            public void SetProperties(FireAbilitiesProperties properties)
+            {
+                m_manaCost = properties.ManaCost;
+                m_damage = properties.Damage;
+                m_damageType = properties.DamageType;
+                m_radius = properties.Radius;
+            }
         }
         [Serializable]
         public class TimeAbility
         {
-            [SerializeField] private int m_manaCost = 10;
-            [SerializeField] private float m_cooldown = 15f;
-            [SerializeField] private float m_duration = 5f;
-            [SerializeField] private Color m_enemyPaintColor;
+            [SerializeField] private TimeAbilitiesProperties m_timePropteries;
 
+            private int m_manaCost = 10;
+            private float m_cooldown = 15f;
+            private float m_duration = 5f;
+            private Color m_enemyPaintColor;
+
+            public TimeAbilitiesProperties TimeProperties => m_timePropteries;
             public int ManaCost => m_manaCost;
 
             public void Use()
@@ -92,6 +106,13 @@ namespace TowerDefense
 
                 Instance.StartCoroutine(TimeAbilityButton());
             }
+            public void SetProperties(TimeAbilitiesProperties properties)
+            {
+                m_manaCost = properties.ManaCost;
+                m_cooldown = properties.CoolDown;
+                m_duration = properties.Duration;
+                m_enemyPaintColor = properties.EnemyPaintColor;
+            }
         }
         [Header("GameObjects")]
         [SerializeField] private Button m_fireButton;
@@ -113,6 +134,9 @@ namespace TowerDefense
 
             m_fireAbilityText.text = m_FireAbility.ManaCost.ToString();
             m_timeAbilityText.text = m_TimeAbility.ManaCost.ToString();
+
+            m_FireAbility.SetProperties(m_FireAbility.FireProperties);
+            m_TimeAbility.SetProperties(m_TimeAbility.TimeProperties);
 
             CheckManaCost(0);
         }

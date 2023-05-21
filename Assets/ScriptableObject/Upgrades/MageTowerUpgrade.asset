@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_sprite: {fileID: 21300000, guid: 1ff55c4a74fcf9b429b49b787ead3395, type: 3}
   m_costByLevel: 0100000001000000
-  m_upgradeText: Tower upgrade.
+  m_upgradeTextByLevel:
+  - You can build a magical tower.
+  - Magical tower upgrade.
   m_value: 0
