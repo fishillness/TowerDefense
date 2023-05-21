@@ -13,6 +13,7 @@ namespace TowerDefense
         public class FireAbility
         {
             [SerializeField] private FireAbilitiesProperties m_fireProperties;
+            [SerializeField] private UpgradeProperties m_fireUpgrade;
 
             private int m_manaCost = 5;
             private int m_damage = 5;
@@ -20,6 +21,7 @@ namespace TowerDefense
             private int m_radius = 2;
 
             public FireAbilitiesProperties FireProperties => m_fireProperties;
+            public UpgradeProperties FireUpgrade => m_fireUpgrade;
             public int ManaCost => m_manaCost;
 
             public void Use()
@@ -55,14 +57,19 @@ namespace TowerDefense
         public class TimeAbility
         {
             [SerializeField] private TimeAbilitiesProperties m_timePropteries;
+            [SerializeField] private UpgradeProperties m_timeUpgrade;
 
             private int m_manaCost = 10;
             private float m_cooldown = 15f;
             private float m_duration = 5f;
             private Color m_enemyPaintColor;
 
+            private bool isCooldown;
+
             public TimeAbilitiesProperties TimeProperties => m_timePropteries;
+            public UpgradeProperties TimeUpgrade => m_timeUpgrade;
             public int ManaCost => m_manaCost;
+            public bool IsCooldown => isCooldown;
 
             public void Use()
             {
@@ -84,6 +91,7 @@ namespace TowerDefense
 
                 IEnumerator Restore()
                 {
+                    isCooldown = true;
                     yield return new WaitForSeconds(m_duration);
 
                     foreach (var ship in FindObjectsOfType<SpaceShip>())
@@ -102,6 +110,7 @@ namespace TowerDefense
                     Instance.m_timeButton.interactable = false;
                     yield return new WaitForSeconds(m_cooldown);
                     Instance.m_timeButton.interactable = true;
+                    isCooldown = false;
                 }
 
                 Instance.StartCoroutine(TimeAbilityButton());
@@ -148,8 +157,11 @@ namespace TowerDefense
 
         private void CheckManaCost(int value)
         {
-            m_fireButton.interactable = (TDPlayer.Instance.CurrentMana > m_FireAbility.ManaCost);
-            m_timeButton.interactable = (TDPlayer.Instance.CurrentMana > m_TimeAbility.ManaCost);
+            m_fireButton.interactable = (TDPlayer.Instance.CurrentMana >= m_FireAbility.ManaCost &&
+                m_FireAbility.FireProperties.IsAvailable());
+            m_timeButton.interactable = (TDPlayer.Instance.CurrentMana >= m_TimeAbility.ManaCost &&
+                m_TimeAbility.IsCooldown == false &&
+                m_TimeAbility.TimeProperties.IsAvailable());
         }
     }
 }

@@ -16,6 +16,6 @@ MonoBehaviour:
   m_damage: 5
   m_damageType: 1
   m_radius: 2
-  m_requiredUpgrade: {fileID: 0}
-  m_requiredUpgradeLevel: 0
+  m_requiredUpgrade: {fileID: 11400000, guid: f5608ec7c833d4e44b0b6be7bfad2534, type: 2}
+  m_requiredUpgradeLevel: 1
   m_upgradesTo: []
