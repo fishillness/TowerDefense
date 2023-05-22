@@ -18,4 +18,5 @@ MonoBehaviour:
   m_radius: 2
   m_requiredUpgrade: {fileID: 11400000, guid: f5608ec7c833d4e44b0b6be7bfad2534, type: 2}
   m_requiredUpgradeLevel: 1
-  m_upgradesTo: []
+  m_upgradesTo:
+  - {fileID: 11400000, guid: 5e7267afe34e2f240afa66640340a241, type: 2}

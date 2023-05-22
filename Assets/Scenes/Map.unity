@@ -1656,6 +1656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_shopPanel: {fileID: 2018368219}
+  m_starsPanel: {fileID: 1946376424}
   m_openShopnButton: {fileID: 78708816}
   m_starsAmountText: {fileID: 2048828634}
   m_starsAmount: 0

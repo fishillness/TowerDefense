@@ -18,4 +18,5 @@ MonoBehaviour:
   m_enemyPaintColor: {r: 0.38319683, g: 0.92797846, b: 0.9811321, a: 1}
   m_requiredUpgrade: {fileID: 11400000, guid: fab5ac10487f1414b95e5d97d03ec547, type: 2}
   m_requiredUpgradeLevel: 1
-  m_upgradesTo: []
+  m_upgradesTo:
+  - {fileID: 11400000, guid: d0f53e19207fe974aa8848898a0677cc, type: 2}

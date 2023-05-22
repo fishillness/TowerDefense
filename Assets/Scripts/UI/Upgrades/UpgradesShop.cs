@@ -6,6 +6,7 @@ namespace TowerDefense
     public class UpgradesShop : MonoBehaviour
     {        
         [SerializeField] private GameObject m_shopPanel;
+        [SerializeField] private GameObject m_starsPanel;
         [SerializeField] private Button m_openShopnButton;
 
         [SerializeField] private Text m_starsAmountText;
@@ -16,6 +17,7 @@ namespace TowerDefense
         private void Start()
         {
             m_shopPanel.SetActive(false);
+            m_starsPanel.SetActive(true);
             m_openShopnButton.onClick.AddListener(OpenShop);
 
             foreach (var slot in m_upgrades)
@@ -55,6 +57,7 @@ namespace TowerDefense
         private void OpenShop()
         {
             m_shopPanel.SetActive(!m_shopPanel.activeSelf);
+            m_starsPanel.SetActive(!m_shopPanel.activeSelf);
         }
     }
 }
