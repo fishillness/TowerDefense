@@ -13,7 +13,6 @@ namespace TowerDefense
         public class FireAbility
         {
             [SerializeField] private FireAbilitiesProperties m_fireProperties;
-            [SerializeField] private UpgradeProperties m_fireUpgrade;
 
             private int m_manaCost = 5;
             private int m_damage = 5;
@@ -21,7 +20,6 @@ namespace TowerDefense
             private int m_radius = 2;
 
             public FireAbilitiesProperties FireProperties => m_fireProperties;
-            public UpgradeProperties FireUpgrade => m_fireUpgrade;
             public int ManaCost => m_manaCost;
 
             public void Use()
@@ -47,17 +45,34 @@ namespace TowerDefense
 
             public void SetProperties(FireAbilitiesProperties properties)
             {
-                m_manaCost = properties.ManaCost;
-                m_damage = properties.Damage;
-                m_damageType = properties.DamageType;
-                m_radius = properties.Radius;
+                bool isAvailableUpgradeTo = false;
+
+                foreach (var asset in properties.UpgradesTo)
+                {
+                    if (asset.IsAvailable())
+                    {
+                        m_manaCost = asset.ManaCost;
+                        m_damage = asset.Damage;
+                        m_damageType = asset.DamageType;
+                        m_radius = asset.Radius;
+
+                        isAvailableUpgradeTo = true;
+                    }
+                }
+
+                if (isAvailableUpgradeTo == false)
+                {
+                    m_manaCost = properties.ManaCost;
+                    m_damage = properties.Damage;
+                    m_damageType = properties.DamageType;
+                    m_radius = properties.Radius;
+                }
             }
         }
         [Serializable]
         public class TimeAbility
         {
             [SerializeField] private TimeAbilitiesProperties m_timePropteries;
-            [SerializeField] private UpgradeProperties m_timeUpgrade;
 
             private int m_manaCost = 10;
             private float m_cooldown = 15f;
@@ -67,7 +82,6 @@ namespace TowerDefense
             private bool isCooldown;
 
             public TimeAbilitiesProperties TimeProperties => m_timePropteries;
-            public UpgradeProperties TimeUpgrade => m_timeUpgrade;
             public int ManaCost => m_manaCost;
             public bool IsCooldown => isCooldown;
 
@@ -117,10 +131,28 @@ namespace TowerDefense
             }
             public void SetProperties(TimeAbilitiesProperties properties)
             {
-                m_manaCost = properties.ManaCost;
-                m_cooldown = properties.CoolDown;
-                m_duration = properties.Duration;
-                m_enemyPaintColor = properties.EnemyPaintColor;
+                bool isAvailableUpgradeTo = false;
+
+                foreach (var asset in properties.UpgradesTo)
+                {
+                    if (asset.IsAvailable())
+                    {
+                        m_manaCost = asset.ManaCost;
+                        m_cooldown = asset.CoolDown;
+                        m_duration = asset.Duration;
+                        m_enemyPaintColor = asset.EnemyPaintColor;
+
+                        isAvailableUpgradeTo = true;
+                    }
+                }
+
+                if (isAvailableUpgradeTo == false)
+                {
+                    m_manaCost = properties.ManaCost;
+                    m_cooldown = properties.CoolDown;
+                    m_duration = properties.Duration;
+                    m_enemyPaintColor = properties.EnemyPaintColor;
+                }                
             }
         }
         [Header("GameObjects")]

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16653f4883770f0448d9fdd753687d32, type: 3}
+  m_Name: TimeAbility_Lvl_2
+  m_EditorClassIdentifier: 
+  m_manaCost: 10
+  m_cooldown: 15
+  m_duration: 5
+  m_enemyPaintColor: {r: 0.38319683, g: 0.92797846, b: 0.9811321, a: 1}
+  m_requiredUpgrade: {fileID: 11400000, guid: fab5ac10487f1414b95e5d97d03ec547, type: 2}
+  m_requiredUpgradeLevel: 1
+  m_upgradesTo: []
