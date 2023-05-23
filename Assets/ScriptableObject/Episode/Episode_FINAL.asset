@@ -15,4 +15,5 @@ MonoBehaviour:
   m_EpisodeName: Level 1
   m_Levels:
   - Level 1
+  - Level final
   m_PreviewImage: {fileID: 0}
