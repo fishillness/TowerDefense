@@ -49,7 +49,7 @@ namespace TowerDefense
         private void RestartLevel()
         {
             Time.timeScale = 1;
-            Debug.Log("Restard level not working");
+            LevelSequenceController.Instance.RestartLevel();
         }
 
         private void GoToMap()

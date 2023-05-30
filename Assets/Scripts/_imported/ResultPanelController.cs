@@ -57,7 +57,7 @@ namespace SpaceShooter
         public void OnRestartLevel()
         {
            // Time.timeScale = 1;
-            LevelSequenceController.Instance.RestartLevel();
+            LevelSequenceController.Instance.GoToMap();
         }
         ///////////////////////////////////////////////////////
 

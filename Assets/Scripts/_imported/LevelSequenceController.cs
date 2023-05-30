@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TowerDefense;
 
 namespace SpaceShooter
 {    
     public class LevelSequenceController : SingletonBase<LevelSequenceController>
     {
+        [SerializeField] private SceneProperties sceneProperties;
+
         public static string MainMenuSceneNickname = "Map";
         public Episode CurrentEpisode { get; private set; }
         public int CurrentLevel { get; private set; }
@@ -26,8 +29,14 @@ namespace SpaceShooter
 
         public void RestartLevel()
         {
+            SceneManager.LoadScene(CurrentEpisode.Levels[CurrentLevel]);
+        }
+
+        public void GoToMap()
+        {
             //SceneManager.LoadScene(CurrentEpissode.Levels[CurrentLevel]);
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(sceneProperties.MapNumberInBuild);
+            //SceneManager.LoadScene(1);
         }
 
         public void FinishCurrentLevel(bool success)
@@ -46,7 +55,8 @@ namespace SpaceShooter
 
             if (CurrentEpisode.Levels.Length <= CurrentLevel)  
             {
-                SceneManager.LoadScene(MainMenuSceneNickname);
+                //SceneManager.LoadScene(MainMenuSceneNickname);
+                SceneManager.LoadScene(sceneProperties.MapNumberInBuild);
             }
             else
             {
