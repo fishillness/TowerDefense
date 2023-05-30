@@ -1,8 +1,11 @@
 using System;
 using UnityEngine;
 using SpaceShooter;
-using UnityEditor;
 using UnityEngine.UIElements;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace TowerDefense
 {
