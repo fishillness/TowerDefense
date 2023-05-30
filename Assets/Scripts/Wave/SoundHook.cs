@@ -8,6 +8,7 @@ namespace TowerDefense
         public void Play()
         {
             m_sound.Play();
+            Debug.Log($" Sound {m_sound} playing.");
         }
     }
 }

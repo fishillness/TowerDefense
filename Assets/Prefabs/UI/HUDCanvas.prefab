@@ -2082,6 +2082,7 @@ GameObject:
   - component: {fileID: 3072070500749812017}
   - component: {fileID: 3072070500749812015}
   - component: {fileID: 3072070500749812014}
+  - component: {fileID: 8627764926918256100}
   m_Layer: 5
   m_Name: LosePanel
   m_TagString: Untagged
@@ -2150,6 +2151,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8627764926918256100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3072070500749812016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b348daa17e15a46a931374c18c39ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_sound: 5
 --- !u!1 &3072070500910518158
 GameObject:
   m_ObjectHideFlags: 0
@@ -3014,13 +3028,14 @@ GameObject:
   - component: {fileID: 3072070501920211126}
   - component: {fileID: 3072070501920211129}
   - component: {fileID: 8345846306676269584}
+  - component: {fileID: 120786245069452873}
   m_Layer: 5
   m_Name: WinPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3072070501920211128
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3099,6 +3114,19 @@ MonoBehaviour:
   - {fileID: 2111877077840873665}
   - {fileID: 4577618560007842437}
   m_starOn: {fileID: -6859001260349468157, guid: c21ae2e058cdc6f4eaa592c5df3ddd65, type: 3}
+--- !u!114 &120786245069452873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3072070501920211131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b348daa17e15a46a931374c18c39ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_sound: 4
 --- !u!1 &3072070502365912801
 GameObject:
   m_ObjectHideFlags: 0

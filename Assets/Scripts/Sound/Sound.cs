@@ -2,9 +2,13 @@ namespace TowerDefense
 {
     public enum Sound
     {
-        BGM,
-        Arrow,
-        ArrowHit
+        Arrow = 0,
+        ArrowHit = 1,
+        EnemyDie = 2,
+        EnemyAttack = 3,
+        PlayerWinPanel = 4,
+        PlayerLosePanel = 5,
+        BGM = 6,
     }
 
     public static class SoundExtensions
