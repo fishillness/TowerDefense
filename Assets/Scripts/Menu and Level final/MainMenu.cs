@@ -6,7 +6,9 @@ namespace TowerDefense
 {
     public class MainMenu : MonoBehaviour
     {
+        [SerializeField] private SceneProperties m_sceneProperties;
         [SerializeField] private Button m_continueButton;
+        
         private void Start()
         {
             m_continueButton.interactable = FileHandler.HasFile(MapCompletion.m_filename);
@@ -15,12 +17,11 @@ namespace TowerDefense
         {
             FileHandler.Reset(MapCompletion.m_filename);
             FileHandler.Reset(Upgrades.m_filename);
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(m_sceneProperties.MapNumberInBuild);
         }
         public void Continue()
         {
-
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(m_sceneProperties.MapNumberInBuild);
         }
         public void OnApplicationQuit()
         {

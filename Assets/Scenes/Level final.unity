@@ -417,8 +417,9 @@ GameObject:
   - component: {fileID: 765115912}
   - component: {fileID: 765115914}
   - component: {fileID: 765115913}
+  - component: {fileID: 765115915}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: ScorePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -484,6 +485,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765115911}
   m_CullTransparentMesh: 1
+--- !u!114 &765115915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765115911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a76ac1ae3a6d6504d95c99aa3a60b2c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_scoreText: {fileID: 1459533309}
 --- !u!1 &873250186
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,6 +590,7 @@ GameObject:
   - component: {fileID: 1237990366}
   - component: {fileID: 1237990365}
   - component: {fileID: 1237990364}
+  - component: {fileID: 1237990368}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -664,6 +679,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1237990368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237990363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de6f4491faaf394fbc02a12feffdfcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneProperties: {fileID: 11400000, guid: a782e75eb3ecbe04b920aec922c8561c, type: 2}
+  m_mapButton: {fileID: 1843701303}
+  m_mainMenuButton: {fileID: 288802496}
 --- !u!1 &1273797097
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,7 +856,7 @@ GameObject:
   - component: {fileID: 1376030155}
   - component: {fileID: 1376030154}
   m_Layer: 5
-  m_Name: 5core
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -907,7 +937,7 @@ GameObject:
   - component: {fileID: 1459533310}
   - component: {fileID: 1459533309}
   m_Layer: 5
-  m_Name: 5coreText
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
