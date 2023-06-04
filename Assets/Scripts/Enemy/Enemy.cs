@@ -49,6 +49,7 @@ namespace TowerDefense
         [SerializeField] private bool invulnerabilityOfFire;
         public bool IsInvulnerableOfFire => invulnerabilityOfFire;
         [SerializeField] private ArmorType m_armorType;
+        [SerializeField] private HealthBar m_healthBar;
 
         public event Action OnEnd;
 
@@ -59,6 +60,12 @@ namespace TowerDefense
         {
             m_destructible = GetComponent<Destructible>();
         }
+
+        private void Start()
+        {
+            m_healthBar.SetHealthValue(m_destructible.HitPoints, m_destructible.MaxHitPoint);
+        }
+
         private void OnDestroy() { OnEnd?.Invoke(); }
         #region Public API
         public void Use(EnemyAsset asset)
@@ -92,6 +99,7 @@ namespace TowerDefense
 
         public void TakeDamage(int damage, DamageType damageType)
         {
+            m_healthBar.SetHealthValue(m_destructible.HitPoints, m_destructible.MaxHitPoint);
             m_destructible.ApplyDamage(ArmorDamageFunctions[(int) m_armorType](damage, damageType, m_armor));
 
             //m_destructible.ApplyDamage(Mathf.Max(1, damage - m_armor));
