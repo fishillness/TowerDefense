@@ -57,6 +57,7 @@ namespace TowerDefense
             DisableAll<Projectile>();
             DisableAll<Tower>();
             DisableAll<NextWaveGUI>();
+            DisableAll<TDPlayer>();
         }
     }
 }
