@@ -7,6 +7,8 @@ namespace TowerDefense
 {
     public class MapLevel : MonoBehaviour
     {
+        public static event Action<MapLevel, Episode> OnStartLevel;
+
         [SerializeField] private RectTransform m_resultPanel;
         [SerializeField] private Image[] m_resultImages;
         [SerializeField] private Sprite m_starOn;
@@ -15,8 +17,13 @@ namespace TowerDefense
         public bool IsComplete => gameObject.activeSelf &&
             m_resultPanel.gameObject.activeSelf;
 
+        public void OpenStartLevelPanel()
+        {
+            OnStartLevel?.Invoke(this, m_episode);
+        }
+
         public void LoadLevel()
-        {            
+        {
             LevelSequenceController.Instance.StartEpisode(m_episode);
         }
 
