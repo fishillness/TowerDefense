@@ -30,6 +30,8 @@ namespace TowerDefense
                     target.m_sounds[i] = EditorGUILayout.ObjectField(
                         $"{(Sound)i}: ", target.m_sounds[i], typeof(AudioClip), false) as AudioClip;
                 }
+
+                EditorUtility.SetDirty(target);
             }
         }
 #endif
