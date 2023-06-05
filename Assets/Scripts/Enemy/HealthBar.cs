@@ -13,14 +13,13 @@ namespace TowerDefense
             m_slider.gameObject.SetActive(true);
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             m_slider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + m_offset);
         }
 
         public void SetHealthValue(int currentHealth, int maxHealth)
         {
-            //m_slider.gameObject.SetActive(currentHealth < maxHealth); //хочу ли я так?
             m_slider.maxValue = maxHealth;
             m_slider.value = currentHealth;
         }
