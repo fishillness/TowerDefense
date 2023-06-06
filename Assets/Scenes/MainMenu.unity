@@ -1965,7 +1965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 1
   m_soundProperties: {fileID: 11400000, guid: 9fd3bdffe06442348b52ba86efb2e1b6, type: 2}
-  m_BGM: {fileID: 8300000, guid: f06ed042ef29a654abd304ea0361ad41, type: 3}
+  m_BGM: {fileID: 8300000, guid: 420d9518370551f42bd0e626cc825553, type: 3}
 --- !u!1 &2039498903
 GameObject:
   m_ObjectHideFlags: 0
