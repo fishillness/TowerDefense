@@ -17,8 +17,10 @@ MonoBehaviour:
   m_animations: {fileID: 9100000, guid: f78fa9062ef8f0f4387ce3fdcd7d7e44, type: 2}
   m_moveSpeed: 0.6
   m_hitpoint: 35
+  m_armor: 0
   m_score: 5
   m_radiusCollider: 0.24
   m_damage: 1
   m_gold: 2
   m_invulnerabilityOfFire: 0
+  m_armorType: 1
