@@ -12,12 +12,30 @@ EditorBuildSettings:
     path: Assets/Scenes/Map.unity
     guid: 92ea68e6ab7d3c74b864601332ee46cb
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Level final.unity
+    guid: 5afd22783455efe498c2704acacff9d0
   - enabled: 1
     path: Assets/Scenes/test Level 2.unity
     guid: 302fd3b2390d7d842960b661263b1f83
   - enabled: 1
-    path: Assets/Scenes/Level final.unity
-    guid: 5afd22783455efe498c2704acacff9d0
+    path: Assets/Scenes/Level 1.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Level 1 extra.unity
+    guid: 0b8880d7230fec44da5bff5becc1e11a
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: d561deecd59ce524abbebaca7cc81825
+  - enabled: 1
+    path: Assets/Scenes/Level 2 extra.unity
+    guid: 933c2042cb29b5a42a6baa49d467ec14
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: e4498f83ad02f784aaf291be1edff982
+  - enabled: 1
+    path: Assets/Scenes/Level 3 extra.unity
+    guid: ecc679f7792c2e74c82e99426bfe9104
+  - enabled: 1
+    path: Assets/Scenes/Level 4.unity
+    guid: 50935d6fbda962841b7eeda7ec733816
   m_configObjects: {}

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98c41f2cbe8885643a9cd64d4a9bce42, type: 3}
   m_Name: Level 003 extra
   m_EditorClassIdentifier: 
-  m_EpisodeName: 
-  m_Levels: []
-  m_PreviewImage: {fileID: 0}
+  m_EpisodeName: Level 3 extra
+  m_Levels:
+  - Level 3 extra
+  m_PreviewImage: {fileID: 21300000, guid: 011443270721a2e4aa2561de6b08dbc7, type: 3}
