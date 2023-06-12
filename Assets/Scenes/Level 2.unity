@@ -1532,7 +1532,7 @@ MonoBehaviour:
   m_paths:
   - {fileID: 939167458}
   - {fileID: 285031663}
-  m_currentWave: {fileID: 1961518362}
+  m_currentWave: {fileID: 0}
 --- !u!4 &534136483
 Transform:
   m_ObjectHideFlags: 0
@@ -3655,17 +3655,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1961518362 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7929429403262728434, guid: bc72ca80597b129429ac6b6f40b9c99b, type: 3}
-  m_PrefabInstance: {fileID: 7929429402942266856}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0c85222d01c5084d872f75b42b905e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1975106547
 GameObject:
   m_ObjectHideFlags: 0
@@ -4244,7 +4233,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: bc72ca80597b129429ac6b6f40b9c99b, type: 3}
 --- !u!4 &7929429402942266857 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4931475615556085257, guid: bc72ca80597b129429ac6b6f40b9c99b, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6116998907353007079, guid: bc72ca80597b129429ac6b6f40b9c99b, type: 3}
   m_PrefabInstance: {fileID: 7929429402942266856}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8602412845423867273
@@ -4260,7 +4249,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 783921b67f147aa4dbdb55e745497962, type: 3}
     - target: {fileID: 8602412845423867276, guid: e0efe016d64dcca418fe4ebf94302920, type: 3}
       propertyPath: m_Volume
-      value: 0
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 8602412845946555650, guid: e0efe016d64dcca418fe4ebf94302920, type: 3}
       propertyPath: sceneProperties

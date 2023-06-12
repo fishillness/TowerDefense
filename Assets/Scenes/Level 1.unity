@@ -2213,18 +2213,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8602412845423867275, guid: e0efe016d64dcca418fe4ebf94302920, type: 3}
-      propertyPath: m_BGM
-      value: 
-      objectReference: {fileID: 8300000, guid: 783921b67f147aa4dbdb55e745497962, type: 3}
-    - target: {fileID: 8602412845423867276, guid: e0efe016d64dcca418fe4ebf94302920, type: 3}
-      propertyPath: m_Volume
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8602412845946555650, guid: e0efe016d64dcca418fe4ebf94302920, type: 3}
-      propertyPath: sceneProperties
-      value: 
-      objectReference: {fileID: 11400000, guid: a782e75eb3ecbe04b920aec922c8561c, type: 2}
     - target: {fileID: 8602412845946555651, guid: e0efe016d64dcca418fe4ebf94302920, type: 3}
       propertyPath: m_Name
       value: SingleLevelTestObject

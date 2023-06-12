@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 0
+  sceneProperties: {fileID: 11400000, guid: a782e75eb3ecbe04b920aec922c8561c, type: 2}
 --- !u!114 &8602412845946555652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,7 +86,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -183,4 +184,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 0
   m_soundProperties: {fileID: 11400000, guid: 9fd3bdffe06442348b52ba86efb2e1b6, type: 2}
-  m_BGM: {fileID: 0}
+  m_BGM: {fileID: 8300000, guid: 783921b67f147aa4dbdb55e745497962, type: 3}

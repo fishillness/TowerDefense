@@ -1999,7 +1999,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 783921b67f147aa4dbdb55e745497962, type: 3}
     - target: {fileID: 8602412845423867276, guid: e0efe016d64dcca418fe4ebf94302920, type: 3}
       propertyPath: m_Volume
-      value: 0.13
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 8602412845946555650, guid: e0efe016d64dcca418fe4ebf94302920, type: 3}
       propertyPath: sceneProperties
