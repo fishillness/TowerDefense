@@ -1578,6 +1578,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4675de39c821ef049b109d6ea9aaee55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &802992103 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 250321953051636267, guid: 0faa7f3a12bdd7f4f8b06fd4f559f3eb, type: 3}
+  m_PrefabInstance: {fileID: 1176921622}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4675de39c821ef049b109d6ea9aaee55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &815070012
 GameObject:
   m_ObjectHideFlags: 0
@@ -2057,6 +2068,7 @@ MonoBehaviour:
   branchLevels:
   - {fileID: 522099814267875662}
   - {fileID: 802671501}
+  - {fileID: 802992103}
 --- !u!1001 &1023079881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2270,7 +2282,7 @@ PrefabInstance:
     - target: {fileID: 250321953051636267, guid: 0faa7f3a12bdd7f4f8b06fd4f559f3eb, type: 3}
       propertyPath: m_rootLevel
       value: 
-      objectReference: {fileID: 730932672}
+      objectReference: {fileID: 1500555032}
     - target: {fileID: 250321953051636267, guid: 0faa7f3a12bdd7f4f8b06fd4f559f3eb, type: 3}
       propertyPath: m_needPoints
       value: 12
@@ -2593,11 +2605,13 @@ MonoBehaviour:
     m_score: 0
   - m_episode: {fileID: 11400000, guid: 8fbccd9154fc11f418ce5a52a9de914b, type: 2}
     m_score: 0
-  - m_episode: {fileID: 11400000, guid: 659670284f774de4a874ec40961937e1, type: 2}
+  - m_episode: {fileID: 11400000, guid: 1e8feb976715bbf4296958d9eecbac3a, type: 2}
     m_score: 0
   - m_episode: {fileID: 11400000, guid: fb8b29aac668ffc4aa65003319bdd504, type: 2}
     m_score: 0
   - m_episode: {fileID: 11400000, guid: 6f8f5649a1e650e4fad310046f92bb35, type: 2}
+    m_score: 0
+  - m_episode: {fileID: 11400000, guid: 589a4d3c669ae594d91b644d336fb04b, type: 2}
     m_score: 0
   - m_episode: {fileID: 11400000, guid: 852df13a09fd25e41974d6e689dd9bcd, type: 2}
     m_score: 0
