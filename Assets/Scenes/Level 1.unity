@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 0
-  m_ReferenceTime: 50
+  m_ReferenceTime: 110
   m_EventLevelCompleted:
     m_PersistentCalls:
       m_Calls: []
@@ -1259,7 +1259,7 @@ MonoBehaviour:
   - m_squads:
     - m_asset: {fileID: 11400000, guid: 71730e9c567aecb46819c1dfa82383d6, type: 2}
       m_count: 3
-  m_prepareTime: 20
+  m_prepareTime: 0
   m_nextWave: {fileID: 0}
 --- !u!1 &1083419228
 GameObject:
